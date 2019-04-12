@@ -1,17 +1,8 @@
 package com.zjc.bs.mapper.admin;
 
 import com.zjc.bs.entity.admin.BsUser;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface BsUserMapper {
-    int deleteByPrimaryKey(Integer id);
+public interface BsUserMapper extends Mapper<BsUser> {
 
-    int insert(BsUser record);
-
-    int insertSelective(BsUser record);
-
-    BsUser selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(BsUser record);
-
-    int updateByPrimaryKey(BsUser record);
 }

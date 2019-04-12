@@ -1,6 +1,11 @@
 package com.zjc.bs.entity.admin;
 
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "bsuser")
 public class BsUser {
+    @Id
     private Integer id;
 
     private String username;
