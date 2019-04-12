@@ -20,7 +20,7 @@ public class BsUserController {
     @ResponseBody
     public Response<Boolean> login(BsUser bsUser, HttpServletRequest request) {
 
-        if(bsUserService.login(bsUser)){
+        if(bsUserService.login(bsUser)!=null){
             HttpSession session = request.getSession();
             session.setAttribute("login",true);
             return Response.success();

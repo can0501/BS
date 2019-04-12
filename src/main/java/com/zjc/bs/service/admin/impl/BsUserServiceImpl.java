@@ -14,10 +14,9 @@ public class BsUserServiceImpl implements BsUserService {
 
     @Override
 
-    public Boolean login(BsUser bsUser) {
-       BsUser bsUser1= bsUserMapper.selectByPrimaryKey(1);
-        if (bsUser1!=null)
-        return true;
-        return false;
+    public BsUser login(BsUser bsUser) {
+        BsUser bsUser1 = bsUserMapper.selectOne(bsUser);
+
+        return bsUser1;
     }
 }

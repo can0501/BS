@@ -48,14 +48,14 @@
             selectByExampleQueryId="false"
             mapperName="Mapper接口名称"
          ></table>-->
-        <table tableName="bsuser"
-               domainObjectName="BsUser"
+        <table tableName="people"
+               domainObjectName="People"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false"
-               mapperName="BsUserMapper"
+               mapperName="PeopleMapper"
         ></table>
     </context>
 </generatorConfiguration>

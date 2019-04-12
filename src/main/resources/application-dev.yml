@@ -24,3 +24,8 @@ mapper:
   not-empty: true
   identity: SQLSERVER
   mappers: tk.mybatis.mapper.common.Mapper
+
+pagehelper:
+    helperDialect: sqlserver
+    reasonable: true
+    params: count=countSql

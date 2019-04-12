@@ -1,23 +1,28 @@
 package com.zjc.bs;
 
-import com.zjc.bs.mapper.admin.BsUserMapper;
+import com.github.pagehelper.PageHelper;
+import com.zjc.bs.entity.admin.People;
+import com.zjc.bs.mapper.admin.PeopleMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BsApplicationTests {
 
-    @Resource
-    BsUserMapper bsUserMapper;
+    @Autowired
+    PeopleMapper mapper;
+
     @Test
     public void contextLoads() {
-        System.out.println("-------------------------------------");
+        PageHelper.offsetPage(1, 5);
+        List list = mapper.selectAll();
+        int i=1;
     }
 
 }
