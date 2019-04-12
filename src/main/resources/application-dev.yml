@@ -1,0 +1,17 @@
+
+server:
+  port: 4396
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databasename=bs
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: 123456
