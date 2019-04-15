@@ -8,6 +8,12 @@
     <result column="home" jdbcType="VARCHAR" property="home" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="dep" jdbcType="VARCHAR" property="dep" />
+    <result column="username"   property="username" />
+    <result column="password"   property="password" />
+    <result column="role"   property="role" />
   </resultMap>
+ <select id="login" resultMap="BaseResultMap">
+   select * from people where username=#{username} and  password=#{password};
 
+ </select>
 </mapper>

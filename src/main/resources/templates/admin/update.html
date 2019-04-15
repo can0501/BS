@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加会员-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 	 	<link rel="stylesheet" href="/static/css/font.css">
+		<link rel="stylesheet" href="/static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<form class="layui-form">
+				<input class="layui-hide" name="id" id="id" th:value="${people.id}">
+
+				<div class="layui-form-item">
+					<label for="L_username" class="layui-form-label">
+		                <span class="we-red">*</span>用户名
+		            </label>
+					<div class="layui-input-inline" disabled >
+						<input type="text" th:value="${people.username}"  id="L_username" name="username"  disabled autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>姓名
+					</label>
+					<div class="layui-input-inline">
+						<input  th:value="${people.name}"  type="text" id="L_name" name="name" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+				    <label for="L_sex" class="layui-form-label">性别</label>
+				    <div class="layui-input-block" id="L_sex">
+				      <input type="radio" name="sex" value="男" title="男" th:checked="${people.sex == '男'}">
+				      <input type="radio" name="sex" value="女" title="女" th:checked="${people.sex == '女'}">
+
+				    </div>
+				</div>
+				<div class="layui-form-item">
+					<label for="L_sex" class="layui-form-label">角色</label>
+					<div class="layui-input-block" id="L_role">
+						<input type="radio" name="role" value="0" title="管理员" th:checked="${people.role == 0}">
+						<input type="radio" name="role" value="1" title="教师" th:checked="${people.role == 1}">
+						<input type="radio" name="role" value="2" title="督导" th:checked="${people.role == 2}" >
+						<input type="radio" name="role" value="3" title="领导" th:checked="${people.role == 3}">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+		                <span class="we-red">*</span>手机
+		            </label>
+					<div class="layui-input-inline">
+						<input th:value="${people.tel}"  type="text" id="L_phone" name="tel" lay-verify="required|phone" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>住址
+					</label>
+					<div class="layui-input-inline">
+						<input th:value="${people.home}"   type="text" id="L_home" name="home" autocomplete="off" class="layui-input">
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>学院
+					</label>
+					<div class="layui-input-inline">
+						<input th:value="${people.dep}"  type="text" id="L_dep" name="dep" autocomplete="off" class="layui-input">
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label for="L_pass" class="layui-form-label">
+                  <span class="we-red">*</span>密码
+              </label>
+					<div class="layui-input-inline">
+						<input th:value="${people.password}"  type="password" id="L_pass" name="password" lay-verify="required|pass" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux">
+						1到16个字符
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label for="L_repass" class="layui-form-label">
+                  <span class="we-red">*</span>确认密码
+              </label>
+					<div class="layui-input-inline">
+						<input th:value="${people.password}"  type="password" id="L_repass" name="password" lay-verify="required|repass" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label for="L_repass" class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+			</form>
+		</div>
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}/static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+                // layer.msg(parent.location.href);
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 1) {
+							return '昵称至少得1个字符啊';
+						}
+					},
+					pass: [/(.+){1,12}$/, '密码必须1到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+					console.log(data.field);
+					$.ajax({
+						type:'post',
+					    url:"/people/updatePeople",
+					    data:JSON.stringify(data.field),
+
+                        contentType : 'application/json',
+					    success:function (data) {
+                            layer.msg(data.msg);
+                            if(data.code==200)
+							{
+
+							    setTimeout(function (args) {
+							        var index = parent.layer.getFrameIndex(window.name);
+                                        parent.location.reload("/people/list");
+                                    parent.layer.close(index);
+
+                                    }
+
+                                    ,1000)
+
+
+							}
+
+					    }
+					});
+
+					return false;
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

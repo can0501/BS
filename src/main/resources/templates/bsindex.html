@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 	<head>
 		<meta charset="UTF-8">
@@ -45,7 +45,7 @@
 			</ul>
 			<ul class="layui-nav right" lay-filter="">
 				<li class="layui-nav-item">
-					<a href="javascript:;">Admin</a>
+					<a href="javascript:;" th:text="${people.name}"></a>
 					<dl class="layui-nav-child">
 						<!-- 二级菜单 -->
 						<dd>
@@ -74,51 +74,26 @@
 					<li>
 						<a href="javascript:;">
 							<i class="iconfont">&#xe6b8;</i>
-							<cite>会员管理</cite>
+							<cite>人员管理</cite>
 							<i class="iconfont nav_right">&#xe697;</i>
 						</a>
 						<ul class="sub-menu">
-							<li>
-								<a _href="/pages/member/list.html">
+							<li th:if="${people.role==0}">
+								<a _href="/people/list">
 									<i class="iconfont">&#xe6a7;</i>
-									<cite>会员列表</cite>
+									<cite>人员列表</cite>
 
 								</a>
 							</li>
-							<li>
-								<a _href="/pages/member/del.html">
+							<li th:if="${people.role!=0}">
+								<a _href="/people/detail?id=2">
 									<i class="iconfont">&#xe6a7;</i>
-									<cite>会员删除</cite>
+									<cite>个人信息</cite>
 
 								</a>
 							</li>
-							<li>
-								<a href="javascript:;">
-									<i class="iconfont">&#xe70b;</i>
-									<cite>会员管理</cite>
-									<i class="iconfont nav_right">&#xe697;</i>
-								</a>
-								<ul class="sub-menu">
-									<li>
-										<a _href="/pages/member/addInput.html">
-											<i class="iconfont">&#xe6a7;</i>
-											<cite>输入框操作</cite>
-										</a>
-									</li>
-									<li>
-										<a _href="/pages/404.html">
-											<i class="iconfont">&#xe6a7;</i>
-											<cite>三级菜单演示</cite>
-										</a>
-									</li>
-									<li>
-										<a _href="/pages/404.html">
-											<i class="iconfont">&#xe6a7;</i>
-											<cite>导航菜单演示</cite>
-										</a>
-									</li>
-								</ul>
-							</li>
+
+
 						</ul>
 					</li>
 					<li>
@@ -276,7 +251,7 @@
 		<!-- 中部结束 -->
 		<!-- 底部开始 -->
 		<div class="footer">
-			<div class="copyright">Copyright ©2018 WeAdmin v1.0 All Rights Reserved</div>
+			<div class="copyright">Copyright ©2019 zjcBS</div>
 		</div>
 		<!-- 底部结束 -->
 		<script type="text/javascript">

@@ -20,8 +20,10 @@ public class BsApplicationTests {
 
     @Test
     public void contextLoads() {
-        PageHelper.offsetPage(1, 5);
-        List list = mapper.selectAll();
+        for (int i = 5; i <20 ; i++) {
+            mapper.insertSelective(People.builder().username(i+"").name("王老"+i).sex("男").dep("智能技术与工程学院").home("重庆").role(1).tel("132240315"+i).password("1").build());
+        }
+        int  people = mapper.insertSelective(People.builder().username("212").password("1").build());
         int i=1;
     }
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
 	<meta charset="UTF-8">
 	<title>高校教学督导系统</title>
@@ -54,7 +54,7 @@
                 // alert(888)
                $.ajax({
                    url:"/bsuser/login",
-                   data:{id:1},
+                   data:{username:data.field.username,password:data.field.password},
                    dataType:"json",
                    success:function (data) {
                     if(data.code==200)

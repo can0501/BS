@@ -9,7 +9,7 @@ import javax.persistence.Transient;
 @Getter
 public class Page {
     @Transient
-    private Integer page;
+    private Integer limit=1;
     @Transient
-    private Integer pageSize;
+    private Integer page=10;
 }
