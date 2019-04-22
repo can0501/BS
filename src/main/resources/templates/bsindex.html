@@ -96,27 +96,27 @@
 
 						</ul>
 					</li>
-					<li>
+					<li th:if="${people.role!=0}">
 						<a href="javascript:;">
 							<i class="iconfont">&#xe705;</i>
 							<cite>听课管理</cite>
 							<i class="iconfont nav_right">&#xe697;</i>
 						</a>
 						<ul class="sub-menu">
-							<li>
+							<li th:if="${people.role==3}">
 								<a _href="/course/courseList">
 									<i class="iconfont">&#xe6a7;</i>
 									<cite>听课安排</cite>
 								</a>
 							</li>
-							<li>
-								<a _href="/course/courseTaskList">
+							<li th:if="${people.role==3}">
+								<a _href="/course/courseTaskAllList">
 									<i class="iconfont">&#xe6a7;</i>
 									<cite>任务列表</cite>
 								</a>
 							</li>
 							<li>
-								<a _href="/course/courseTaskList">
+								<a _href="/course/courseCommitList">
 									<i class="iconfont">&#xe6a7;</i>
 									<cite>反馈列表</cite>
 								</a>
@@ -124,12 +124,18 @@
 							<li>
 								<a _href="/course/courseTaskList">
 									<i class="iconfont">&#xe6a7;</i>
+									<cite>我的任务</cite>
+								</a>
+							</li>
+							<li th:if="${people.role!=2}">
+								<a _href="/course/courseListMe">
+									<i class="iconfont">&#xe6a7;</i>
 									<cite>自行听课</cite>
 								</a>
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li th:if="${people.role!=0}">
 						<a href="javascript:;">
 							<i class="iconfont">&#xe723;</i>
 							<cite>教学检查</cite>
@@ -144,7 +150,7 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li th:if="${people.role!=0}">
 						<a href="javascript:;">
 							<i class="iconfont">&#xe726;</i>
 							<cite>教学评估</cite>
@@ -177,7 +183,7 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					<li th:if="${people.role!=0}">
 						<a href="javascript:;">
 							<i class="iconfont">&#xe6ce;</i>
 							<cite>系统统计</cite>

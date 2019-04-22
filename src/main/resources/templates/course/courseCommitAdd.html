@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加会员-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 	 	<link rel="stylesheet" href="/static/css/font.css">
+		<link rel="stylesheet" href="/static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<form class="layui-form">
+				<input name="ctid" th:value="${courseTask.id}" class="layui-hide">
+				<input name="id" th:value="${courseCommit.id}" class="layui-hide">
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>课程名
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"      autocomplete="" disabled class="layui-input" th:value="${courseTask.cname}">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>授课老师
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"    autocomplete="" class="layui-input" disabled  th:value="${courseTask.teacher}">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>听课人
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"      autocomplete="" disabled lay-verify="required" class="layui-input" th:value="${courseTask.pname}">
+					</div>
+				</div>
+
+
+
+
+
+				<div class="layui-form-item">
+					<label for="L_email" class="layui-form-label">
+						<span class="we-red">*</span>内容
+					</label>
+					<div class="layui-input-inline">
+						<textarea   id="content" name="content" lay-verify="required" class="layui-textarea" th:text="${courseCommit.content}"></textarea>
+
+					</div>
+
+				</div>
+
+				<div class="layui-form-item">
+					<label for="L_repass" class="layui-form-label">
+                  <span class="we-red">*</span>建议
+              </label>
+					<div class="layui-input-inline">
+						<textarea   id="suggestion" name="suggestion" class="layui-textarea" th:text="${courseCommit.suggestion}"></textarea>
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<table class="layui-table" lay-filter="supervisorList"   id="supervisorList">
+
+					</table>
+				</div>
+				<div class="layui-form-item">
+					<label for="L_repass" class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+
+			</form>
+
+		</div>
+
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}/static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer','table'], function() {
+                var form = layui.form,
+                    $ = layui.jquery,
+                    util = layui.util,
+                    admin = layui.admin,
+                    layer = layui.layer,
+                    table = layui.table;
+                // layer.msg(parent.location.href);
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 1) {
+							return '昵称至少得1个字符啊';
+						}
+					},
+					pass: [/(.+){1,12}$/, '密码必须1到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+                table.render({
+                    elem: '#supervisorList'
+                    ,
+                    url:'/people/listData?'
+                    // data:{"code":0,"msg":"","count":1000,"data":[{"id":10000,"username":"user-0","sex":"女","city":"城市-0","sign":"签名-0","experience":255,"logins":24,"wealth":82830700,"classify":"作家","score":57},{"id":10001,"username":"user-1","sex":"男","city":"城市-1","sign":"签名-1","experience":884,"logins":58,"wealth":64928690,"classify":"词人","score":27}]}
+                    ,
+                    cols: [
+                        [
+                            {checkbox: true},
+                            {field: 'name', title: '姓名' },
+                            {field: 'tel', title: '电话'  },
+                            {field: 'home', title: '住址'  },
+                            {field: 'sex', title: '性别' ,width:60 },
+                            {field: 'dep', title: '学院' ,width:230 },
+                            {field:'role', title: '角色', templet: function (d) {
+                                    var s=["管理员","教师","督导","领导"];
+                                    return s[d.role];
+
+                                }} //这里的templet值是模板元素的选择器
+
+
+                        ]
+                    ]
+                    , page:  true
+
+
+                });
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+                    var checkStatus = table.checkStatus('supervisorList'); //idTest 即为基础参数 id 对应的值
+					var npl=checkStatus.data;
+                    console.log(checkStatus.data) //获取选中行的数据
+					var np="";
+                    for(var i=0;i<npl.length;i++){
+                        np += npl[i].id + ',';
+					}
+					// layer.msg(np)
+
+					console.log(data.field);
+					$.ajax({
+						type:'post',
+					    url:"/course/commitTask",
+					    data:{content:data.field.content,suggestion:data.field.suggestion,ctid:data.field.ctid,ontifyid:np,id:data.field.id},
+
+                        // contentType : 'application/json',
+					    success:function (data) {
+                            layer.msg(data.msg);
+                            if(data.code==200)
+							{
+
+							    setTimeout(function (args) {
+							        var index = parent.layer.getFrameIndex(window.name);
+                                        parent.location.reload("/course/courseTaskList");
+                                    parent.layer.close(index);
+
+                                    }
+
+                                    ,1000)
+
+
+							}
+
+					    }
+					});
+
+					return false;
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

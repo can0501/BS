@@ -145,11 +145,9 @@
                     });
                 } else if(layEvent === 'edit'){ //编辑
                     //do something
-                    if(data.status!=0)
-                        WeAdminShow('修改反馈','/course/courseCommitAdd?id='+data.id+"&type=1" ,600,400);
-                    // window.location.href='/course/courseCommitAdd?id=' + data.id;
-                    else
-                    WeAdminShow('添加反馈','/course/courseCommitAdd?id='+data.id+"&type=0" ,600,400);
+
+
+                    WeAdminShow('添加用户','/people/update?id='+data.id,600,400);
                     //同步更新缓存对应的值
                     // obj.update({
                     //     username: '123'
@@ -162,27 +160,17 @@
             table.render({
                 elem: '#memberList'
                 ,
-                url:'/course/myCourseTaskListData'
+                url:'/course/courseCommitListData'
                 // data:{"code":0,"msg":"","count":1000,"data":[{"id":10000,"username":"user-0","sex":"女","city":"城市-0","sign":"签名-0","experience":255,"logins":24,"wealth":82830700,"classify":"作家","score":57},{"id":10001,"username":"user-1","sex":"男","city":"城市-1","sign":"签名-1","experience":884,"logins":58,"wealth":64928690,"classify":"词人","score":27}]}
                 ,
                 cols: [
                     [
                         {checkbox: true},
-                        {field: 'cname', title: '课程名' },
-                        {field: 'teacher', title: '授课老师'  },
-                        {field: 'courseTime', title: '课程时间'  },
-                        {field: 'pname', title: '听课人员'  },
-                        {field: 'createDate', title: '创建日期'  },
-
-
-
-
-                        {field:'status', title: '状态', templet: function (d) {
-                            var s=["未听课","已听课"];
-                                return s[d.status];
-
-                            }}  //这里的templet值是模板元素的选择器
-                        ,{title:'操作', align:'center', toolbar: '#barDemo'} //这里的toolbar值是模板元
+                        {field: 'teacher', title: '授课老师' },
+                        {field: 'cname', title: '课程'  },
+                        {field: 'pname', title: '听课老师'  },
+                        {field: 'content', title: '内容'  },
+                        {field: 'suggestion', title: '建议'  },
 
 
                     ]
@@ -196,11 +184,13 @@
 	</script>
 		<script type="text/html" id="barDemo">
 			<!--onclick="WeAdminEdit('编辑','./edit.html', 2, 600, 400)"-->
-			<a title="提交听课反馈"  lay-event="edit" href="javascript:;">
+			<a title="编辑"  lay-event="edit" href="javascript:;">
 				<i class="layui-icon layui-icon-edit"  ></i>
 			</a>
 
-
+			<a title="删除" lay-event="delete" href="javascript:;">
+				<i class="layui-icon layui-icon-delete"></i>
+			</a>
 		</script>
  	</body>
 </html>

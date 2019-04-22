@@ -17,16 +17,25 @@
       inner join people t2 on t2.id= t1.pid
       inner join course t3 on t3.id=t1.cid
       inner join people t4 on t4.id=t3.tid
+      where 1=1
 <if test="pname !=null and pname !=''">
-  where pname=#{pname}
+  and pname=#{pname}
 </if>
+      <if test="pid !=null and pid !=''">
+         and pid=#{pid}
+      </if>
     </select>
   <select id="selectCountCourseTask" resultType="int">
     SELECT count(*) FROM [dbo].[courseTask] t1
     inner join people t2 on t2.id= t1.pid
     inner join course t3 on t3.id=t1.cid
+    where 1=1
     <if test="pname !=null and pname !=''">
-      where pname=#{pname}
+      and pname=#{pname}
+    </if>
+    <if test="pid !=null and pid !=''">
+      and pid=#{pid}
     </if>
   </select>
+
 </mapper>

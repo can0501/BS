@@ -48,14 +48,14 @@
             selectByExampleQueryId="false"
             mapperName="Mapper接口名称"
          ></table>-->
-        <table tableName="courseTask"
-               domainObjectName="CourseTask"
+        <table tableName="courseCommit"
+               domainObjectName="ourseCommit"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false"
-               mapperName="CourseTaskMapper"
+               mapperName="CourseCommitMapper"
         ></table>
     </context>
 </generatorConfiguration>

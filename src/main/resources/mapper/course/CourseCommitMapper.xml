@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjc.bs.mapper.course.CourseCommitMapper">
+  <resultMap id="BaseResultMap" type="com.zjc.bs.entity.course.CourseCommit">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ctid" jdbcType="INTEGER" property="ctid" />
+    <result column="ontifyId" jdbcType="VARCHAR" property="ontifyid" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="suggestion" jdbcType="VARCHAR" property="suggestion" />
+      <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+      <result column="pname"   property="pname" />
+      <result column="cname"   property="cname" />
+      <result column="teacher"   property="teacher" />
+  </resultMap>
+  <select id="getCourseCommitByPage" resultMap="BaseResultMap">
+    SELECT t1.*,t2.pid,t2.cid,t3.name pname,t4.name cname ,t5.name teacher FROM [dbo].[courseCommit] t1
+inner join courseTask t2 on t1.ctid=t2.id
+inner join people t3 on t3.id=t2.pid
+inner join course t4 on t4.id=t2.cid
+inner join people t5 on t5.id=t4.tid
+where 1=1
+<if test="ctid != null and ctid!=''">
+  and (#{ctid}=pid or ontifyId like '%'+convert(nvarchar(50),#{ctid})+'%')
+</if>
+
+  </select>
+
+</mapper>

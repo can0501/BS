@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -27,8 +29,10 @@ public class PeopleController {
         model.addAttribute("people", peoplerService.get(id));
         return "/admin/update";}
     @RequestMapping("/detail")
-    public String detail(Integer id,Model model){
-        model.addAttribute("people", peoplerService.get(id));
+    public String detail(HttpServletRequest request, Model model){
+        HttpSession session = request.getSession();
+        People people = (People) session.getAttribute("people");
+        model.addAttribute("people", peoplerService.get(people.getId()));
         return "/admin/detail";}
 
 
