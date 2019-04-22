@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjc.bs.mapper.course.CourseMapper">
+  <resultMap id="BaseResultMap" type="com.zjc.bs.entity.course.Course">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="tname"   property="tname" />
+  </resultMap>
+  <select id="getCouesePageByCondition" resultMap="BaseResultMap">
+    select t1.*,t2.name tname from course  t1
+    inner join people  t2 on t1.tid=t2.id
+    where 1=1
+    <if test="tname!=null  and tname !='' ">
+      and #{tname}= t2.name
+    </if>
+    <if test="name!=null and name !='' ">
+      and #{name}= t1.name
+    </if>
+  </select>
+  <select id="selectCountByCondition" resultType="int">
+    select count(*) from course  t1
+    inner join people  t2 on t1.tid=t2.id
+    where 1=1
+    <if test="tname!=null  and tname !='' ">
+      and #{tname}= t2.name
+    </if>
+    <if test="name!=null and name !='' ">
+      and #{name}= t1.name
+    </if>
+  </select>
+</mapper>

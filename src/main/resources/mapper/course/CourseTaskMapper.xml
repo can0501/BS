@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjc.bs.mapper.course.CourseTaskMapper">
+  <resultMap id="BaseResultMap" type="com.zjc.bs.entity.course.CourseTask">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="createDate"   property="createDate" />
+    <result column="pname"   property="pname" />
+    <result column="cname"   property="cname" />
+    <result column="courseTime"   property="courseTime" />
+    <result column="teacher"   property="teacher" />
+  </resultMap>
+    <select id="getCourseTaskByPage" resultMap="BaseResultMap">
+      SELECT t1.*,t2.name pname,t3.name cname,t3.time courseTime ,t4.name teacher  FROM [dbo].[courseTask] t1
+      inner join people t2 on t2.id= t1.pid
+      inner join course t3 on t3.id=t1.cid
+      inner join people t4 on t4.id=t3.tid
+<if test="pname !=null and pname !=''">
+  where pname=#{pname}
+</if>
+    </select>
+  <select id="selectCountCourseTask" resultType="int">
+    SELECT count(*) FROM [dbo].[courseTask] t1
+    inner join people t2 on t2.id= t1.pid
+    inner join course t3 on t3.id=t1.cid
+    <if test="pname !=null and pname !=''">
+      where pname=#{pname}
+    </if>
+  </select>
+</mapper>
