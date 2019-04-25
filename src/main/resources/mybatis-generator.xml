@@ -17,14 +17,14 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.zjc.bs.entity.course"
+        <javaModelGenerator targetPackage="com.zjc.bs.entity.check"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="mapper.course" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper.check" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
@@ -34,7 +34,7 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zjc.bs.mapper.course" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zjc.bs.mapper.check" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
@@ -48,14 +48,14 @@
             selectByExampleQueryId="false"
             mapperName="Mapper接口名称"
          ></table>-->
-        <table tableName="courseCommit"
-               domainObjectName="ourseCommit"
+        <table tableName="courseDesignSup"
+               domainObjectName="courseDesignSup"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false"
-               mapperName="CourseCommitMapper"
+               mapperName="courseDesignSupMapper"
         ></table>
     </context>
 </generatorConfiguration>

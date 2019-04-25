@@ -135,18 +135,135 @@
 							</li>
 						</ul>
 					</li>
-					<li th:if="${people.role!=0}">
+					<li th:if="${people.role==1}">
 						<a href="javascript:;">
 							<i class="iconfont">&#xe723;</i>
 							<cite>教学检查</cite>
 							<i class="iconfont nav_right">&#xe697;</i>
 						</a>
 						<ul class="sub-menu">
+
 							<li>
-								<a _href="/pages/order/list.html">
-									<i class="iconfont">&#xe6a7;</i>
-									<cite>订单列表</cite>
+								<a href="javascript:;">
+									<i class="iconfont">&#xe70b;</i>
+									<cite>开学检查</cite>
+									<i class="iconfont nav_right">&#xe697;</i>
 								</a>
+								<ul class="sub-menu">
+									<li>
+										<a _href="/courseDesign/courseDesignTeacherList">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>课程设计</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>授课计划</cite>
+										</a>
+									</li>
+
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<i class="iconfont">&#xe70b;</i>
+									<cite>期末检查</cite>
+									<i class="iconfont nav_right">&#xe697;</i>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a _href="./pages/member/addInput.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>实习实训</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>大作业小论文</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>论文</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>试卷</cite>
+										</a>
+									</li>
+
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li th:if="${people.role==2}">
+						<a href="javascript:;">
+							<i class="iconfont">&#xe723;</i>
+							<cite>教学审查</cite>
+							<i class="iconfont nav_right">&#xe697;</i>
+						</a>
+						<ul class="sub-menu">
+
+							<li>
+								<a href="javascript:;">
+									<i class="iconfont">&#xe70b;</i>
+									<cite>开学检查</cite>
+									<i class="iconfont nav_right">&#xe697;</i>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a _href="/courseDesign/courseDesignSupList">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>课程设计</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>授课计划</cite>
+										</a>
+									</li>
+
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<i class="iconfont">&#xe70b;</i>
+									<cite>期末检查</cite>
+									<i class="iconfont nav_right">&#xe697;</i>
+								</a>
+								<ul class="sub-menu">
+									<li>
+										<a _href="./pages/member/addInput.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>实习实训</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>大作业小论文</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>论文</cite>
+										</a>
+									</li>
+									<li>
+										<a _href="./pages/404.html">
+											<i class="iconfont">&#xe6a7;</i>
+											<cite>试卷</cite>
+										</a>
+									</li>
+
+								</ul>
 							</li>
 						</ul>
 					</li>
