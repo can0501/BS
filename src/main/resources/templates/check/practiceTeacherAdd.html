@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加会员-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 	 	<link rel="stylesheet" href="/static/css/font.css">
+		<link rel="stylesheet" href="/static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-body">
+			<form class="layui-form">
+				<input name="pid" th:value="${id}" class="layui-hide">
+				<div class="layui-form-item">
+					<label for="L_username" class="layui-form-label">
+		                <span class="we-red">*</span>开课学年
+		            </label>
+					<div class="layui-input-inline">
+						<input    type="text" id="L_username" name="startyear" lay-verify="required|nikename" autocomplete="off" class="layui-input">
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学期
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="term" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课程名称
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="coursename" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>专业年级
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="classname" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学院
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="dep" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+				<label  class="layui-form-label">有实习（实训）教学大纲</label>
+				<div class="layui-input-block" >
+					<input type="radio" name="t1" value="true" title="有" checked>
+					<input type="radio" name="t1" value="false" title="无">
+
+				</div>
+			</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有实习（实训）指导书</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t2" value="true" title="有" checked>
+						<input type="radio" name="t2" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">指导书与实习内容一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t3" value="true" title="有" checked>
+						<input type="radio" name="t3" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有实施计划表</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t4" value="true" title="有" checked>
+						<input type="radio" name="t4" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">表中时间、地点、教师、实习内容等要素齐全</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t5" value="true" title="有" checked>
+						<input type="radio" name="t5" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有学生分组表</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t6" value="true" title="有" checked>
+						<input type="radio" name="t6" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">收集了外聘教师资料</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t7" value="true" title="有" checked>
+						<input type="radio" name="t7" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">在各类资料中体现外聘教师信息</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t8" value="true" title="有" checked>
+						<input type="radio" name="t8" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有学生考勤表</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t9" value="true" title="有" checked>
+						<input type="radio" name="t9" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">考勤记录清晰完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t10" value="true" title="有" checked>
+						<input type="radio" name="t10" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+				<label  class="layui-form-label">报告份数与成绩单保持一致</label>
+				<div class="layui-input-block" >
+					<input type="radio" name="t11" value="true" title="有" checked>
+					<input type="radio" name="t11" value="false" title="无">
+
+				</div>
+			</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">报告份数与成绩单保持一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t12" value="true" title="有" checked>
+						<input type="radio" name="t12" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">报告按成绩单顺序一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t13" value="true" title="有" checked>
+						<input type="radio" name="t13" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">报告有批改痕迹</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t14" value="true" title="有" checked>
+						<input type="radio" name="t14" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有教学情况总结报告表</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t15" value="true" title="有" checked>
+						<input type="radio" name="t15" value="false" title="无">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">平时、答辩、成果、操作考核等项成绩记录清晰完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t16" value="true" title="有" checked>
+						<input type="radio" name="t16" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">平时、答辩、成果、操作考核等项成绩记录清晰完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t17" value="true" title="有" checked>
+						<input type="radio" name="t17" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩组成与比例与大纲一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t18" value="true" title="有" checked>
+						<input type="radio" name="t18" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">各项信息、签字完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t19" value="true" title="有" checked>
+						<input type="radio" name="t19" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">分数录入教务系统无误</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t20" value="true" title="有" checked>
+						<input type="radio" name="t20" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩优良率不高于60%</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t21" value="true" title="有" checked>
+						<input type="radio" name="t21" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩优秀率不高于20%</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t22" value="true" title="有" checked>
+						<input type="radio" name="t22" value="false" title="无">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">信息填写、签字等完整完全</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t23" value="true" title="有" checked>
+						<input type="radio" name="t23" value="false" title="无">
+
+					</div>
+				</div>
+
+
+
+
+
+				<div class="layui-form-item">
+					<label for="L_repass" class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+			</form>
+		</div>
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}/static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+                // layer.msg(parent.location.href);
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 1) {
+							return '昵称至少得1个字符啊';
+						}
+					},
+					pass: [/(.+){1,12}$/, '密码必须1到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+                    console.log(JSON.stringify(data.field));
+
+					$.ajax({
+						type:'post',
+					    url:"/practice/addPracticeTeacher",
+					    data:JSON.stringify(data.field),
+
+                        contentType : 'application/json',
+					    success:function (data) {
+                            layer.msg(data.msg);
+                            if(data.code==200)
+							{
+
+							    setTimeout(function (args) {
+							        var index = parent.layer.getFrameIndex(window.name);
+                                        parent.location.reload("/practice/practiceTeacherList");
+                                    parent.layer.close(index);
+
+                                    }
+
+                                    ,1000)
+
+
+							}
+
+					    }
+					});
+
+					return false;
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -24,11 +24,15 @@ public class CourseDesignApi {
     @Autowired
     CourseDesign courseDesign;
     @RequestMapping("/courseDesignTeacherListData")
-    public LayUI courseDesignTeacherListData(CourseDesignTeacher courseDesignTeacher) {
+    public LayUI courseDesignTeacherListData(CourseDesignTeacher courseDesignTeacher,HttpServletRequest request) {
+        HttpSession session=request.getSession();
+        People people = (People) session.getAttribute("people");
+        courseDesignTeacher.setPid(people.getId());
         return LayUI.data(10, courseDesign.getCourseDesignTeacherByPage(courseDesignTeacher));
     }
     @RequestMapping("/courseDesignSupListData")
     public LayUI courseDesignSupListData(CourseDesignSup courseDesignSup) {
+
         return LayUI.data(10, courseDesign.getCourseDesignSupByPage(courseDesignSup));
     }
     @RequestMapping("/updateCourseDesignTeacher")
