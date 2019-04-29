@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加会员-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 	 	<link rel="stylesheet" href="/static/css/font.css">
+		<link rel="stylesheet" href="/static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+	<!--<input  id="id" th:value="${id}" class="layui-hide">-->
+		<div class="weadmin-body">
+			<form class="layui-form">
+				<input type="text"  th:value="${courseDesignTeacher.id}" name="id"   class="layui-hide">
+
+				<div class="layui-form-item">
+					<label for="L_username" class="layui-form-label">
+		                <span class="we-red">*</span>开课学年
+		            </label>
+					<div class="layui-input-inline">
+						<input  th:value="${courseDesignTeacher.startyear}"  type="text" id="L_username" name="startyear" lay-verify="required|nikename" autocomplete="off" class="layui-input">
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学期
+					</label>
+					<div class="layui-input-inline">
+						<input type="text" th:value="${courseDesignTeacher.term}"  name="term" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课程名称
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  th:value="${courseDesignTeacher.coursename}" name="coursename" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>专业年级
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  th:value="${courseDesignTeacher.classname}" name="classname" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学院
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="dep" th:value="${courseDesignTeacher.dep}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有学生考勤表</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t1" value="true" title="有" th:checked="${courseDesignTeacher.t1 == true}">
+						<input type="radio" name="t1" value="false" th:checked="${courseDesignTeacher.t1 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">考勤记录清晰完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t2" value="true" title="有" th:checked="${courseDesignTeacher.t2 == true}">
+						<input type="radio" name="t2" value="false" th:checked="${courseDesignTeacher.t2 == false}">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有平时成绩记录	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t4" value="true" title="有" th:checked="${courseDesignTeacher.t4 == true}">
+						<input type="radio" name="t4" value="false" th:checked="${courseDesignTeacher.t4 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">平时成绩记录清晰完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t5" value="true" title="有" th:checked="${courseDesignTeacher.t5 == true}">
+						<input type="radio" name="t5" value="false" th:checked="${courseDesignTeacher.t5 == false}">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有实验成绩记录</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t7" value="true" title="有" th:checked="${courseDesignTeacher.t7 == true}">
+						<input type="radio" name="t7" value="false" th:checked="${courseDesignTeacher.t7 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">实验成绩记录清晰完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t8" value="true" title="有" th:checked="${courseDesignTeacher.t8 == true}">
+						<input type="radio" name="t8" value="false" th:checked="${courseDesignTeacher.t8 == false}">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">是否包含客观题</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t10" value="true" title="有" th:checked="${courseDesignTeacher.t10 == true}">
+						<input type="radio" name="t10" value="false" th:checked="${courseDesignTeacher.t10 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">是否有题目及要求</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t11" value="true" title="有" th:checked="${courseDesignTeacher.t11 == true}">
+						<input type="radio" name="t11" value="false" th:checked="${courseDesignTeacher.t11 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">是否有评分细则，且单项评分不超过25分</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t12" value="true" title="有" th:checked="${courseDesignTeacher.t12 == true}">
+						<input type="radio" name="t12" value="false" th:checked="${courseDesignTeacher.t12 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">是否采用百分制，总分为100分</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t13" value="true" title="有" th:checked="${courseDesignTeacher.t13 == true}">
+						<input type="radio" name="t13" value="false" th:checked="${courseDesignTeacher.t13 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成果是否有统一的封面和格式要求</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t14" value="true" title="有" th:checked="${courseDesignTeacher.t14 == true}">
+						<input type="radio" name="t14" value="false" th:checked="${courseDesignTeacher.t14 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">报告份数与成绩单保持一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t15" value="true" title="有" th:checked="${courseDesignTeacher.t15 == true}">
+						<input type="radio" name="t15" value="false" th:checked="${courseDesignTeacher.t15 == false}">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">报告顺序与成绩单顺序是否一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t16" value="true" title="有" th:checked="${courseDesignTeacher.t16 == true}">
+						<input type="radio" name="t16" value="false" th:checked="${courseDesignTeacher.t16 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">有无成绩分析表	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t17" value="true" title="有" th:checked="${courseDesignTeacher.t17 == true}">
+						<input type="radio" name="t17" value="false" th:checked="${courseDesignTeacher.t17 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">以大作业成绩进行分析</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t18" value="true" title="有" th:checked="${courseDesignTeacher.t18 == true}">
+						<input type="radio" name="t18" value="false" th:checked="${courseDesignTeacher.t18 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩分布图由教务系统生成	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t19" value="true" title="有" th:checked="${courseDesignTeacher.t19 == true}">
+						<input type="radio" name="t19" value="false" th:checked="${courseDesignTeacher.t19 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩呈正态分布</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t20" value="true" title="有" th:checked="${courseDesignTeacher.t20 == true}">
+						<input type="radio" name="t20" value="false" th:checked="${courseDesignTeacher.t20 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">是否使用红笔评阅，且有批改痕迹</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t21" value="true" title="有" th:checked="${courseDesignTeacher.t21 == true}">
+						<input type="radio" name="t21" value="false" th:checked="${courseDesignTeacher.t21 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">评分是否按评分细则进行 </label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t22" value="true" title="有" th:checked="${courseDesignTeacher.t22 == true}">
+						<input type="radio" name="t22" value="false" th:checked="${courseDesignTeacher.t22 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">更改分数时均有签字</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t23" value="true" title="有" th:checked="${courseDesignTeacher.t23 == true}">
+						<input type="radio" name="t23" value="false" th:checked="${courseDesignTeacher.t23 == false}">
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">分数累加总分无误</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t24" value="true" title="有" th:checked="${courseDesignTeacher.t24 == true}">
+						<input type="radio" name="t24" value="false" th:checked="${courseDesignTeacher.t24 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">总分统一标注在固定位置（建议封面）</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t25" value="true" title="有" th:checked="${courseDesignTeacher.t25 == true}">
+						<input type="radio" name="t25" value="false" th:checked="${courseDesignTeacher.t25 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">分数录入教务系统无误</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t26" value="true" title="有" th:checked="${courseDesignTeacher.t26 == true}">
+						<input type="radio" name="t26" value="false" th:checked="${courseDesignTeacher.t26 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩组成与比例与考核方式一致	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t27" value="true" title="有" th:checked="${courseDesignTeacher.t27 == true}">
+						<input type="radio" name="t27" value="false" th:checked="${courseDesignTeacher.t27 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">各项信息、签字完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t28" value="true" title="有" th:checked="${courseDesignTeacher.t28 == true}">
+						<input type="radio" name="t28" value="false" th:checked="${courseDesignTeacher.t28 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">课程相关资料是否按要求装订</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t29" value="true" title="有" th:checked="${courseDesignTeacher.t29 == true}">
+						<input type="radio" name="t29" value="false" th:checked="${courseDesignTeacher.t29 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">信息填写、签字等完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t30" value="true" title="有" th:checked="${courseDesignTeacher.t30 == true}">
+						<input type="radio" name="t30" value="false" th:checked="${courseDesignTeacher.t30 == false}">
+
+					</div>
+				</div>
+
+
+
+
+				<div class="layui-form-item">
+					<label   class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+			</form>
+		</div>
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}/static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+                // layer.msg(parent.location.href);
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 1) {
+							return '昵称至少得1个字符啊';
+						}
+					},
+					pass: [/(.+){1,12}$/, '密码必须1到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+				   var id= $('#id').val()
+                    console.log(JSON.stringify(data.field));
+					data.id=id;
+					$.ajax({
+						type:'post',
+					    url:"/bigHouseWork/updBigHouseWordTeacher",
+					    data: JSON.stringify(data.field) ,
+                        contentType : 'application/json',
+
+
+					    success:function (data) {
+                            layer.msg(data.msg);
+                            if(data.code==200)
+							{
+
+							    setTimeout(function (args) {
+							        var index = parent.layer.getFrameIndex(window.name);
+                                        parent.location.reload("/bigHouseWork/bigHouseWordTeacherList");
+                                    parent.layer.close(index);
+
+                                    }
+
+                                    ,1000)
+
+
+							}
+
+					    }
+					});
+
+					return false;
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -59,8 +59,8 @@ public class PracticeApi {
     @RequestMapping("/updatePracticeSup")
     public Response updatePracticeSup( @RequestBody PracticeSup practiceSup, HttpServletRequest request) {
         if(practiceService.updatePracticeSup(practiceSup))
-            return Response.success(null, Msg.ADD_SUCCESS);
-        return Response.failure(Msg.ADD_FALIED);
+            return Response.success(null, Msg.UPD_SUCCESS);
+        return Response.failure(Msg.UPD_FALIED);
     }
 
 

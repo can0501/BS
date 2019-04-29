@@ -48,9 +48,14 @@ public class PracticeServiceImpl implements PracticeService {
     public Boolean updatePracticeTeacher(PracticeTeacher practiceTeacher) {
         PracticeTeacher teacherSelect = practiceTeacherMapper.selectByPrimaryKey(practiceTeacher.getId());
         int status = teacherSelect.getStatus();
+        PracticeSup practiceSup = practiceSupMapper.selectOne(PracticeSup.builder().ptid(teacherSelect.getId()).build());
+        practiceSup.setDep(practiceTeacher.getDep());
+        practiceSup.setStartyear(practiceTeacher.getStartyear());
+        practiceSup.setTerm(practiceTeacher.getTerm());
+        practiceSup.setCoursename(practiceTeacher.getCoursename());
+        practiceSup.setClassname(practiceTeacher.getClassname());
         if (status == 2) {
             practiceTeacher.setStatus(3);
-            PracticeSup practiceSup = practiceSupMapper.selectOne(PracticeSup.builder().ptid(teacherSelect.getId()).build());
             practiceSup.setStatus(3);
             if(practiceTeacherMapper.updateByPrimaryKeySelective(practiceTeacher)!=0&&
                     practiceSupMapper.updateByPrimaryKeySelective(practiceSup)!=0)
