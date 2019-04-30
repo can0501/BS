@@ -49,6 +49,22 @@
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">
+						<span class="we-red">*</span>评卷老师
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="pteachername" th:value="${courseDesignTeacher.pteachername}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>试卷份数
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="papernum" th:value="${courseDesignTeacher.papernum}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
 						<span class="we-red">*</span>专业年级
 					</label>
 					<div class="layui-input-inline">
@@ -66,7 +82,7 @@
 
 
 				<div class="layui-form-item">
-					<label  class="layui-form-label">有实习（实训）教学大纲</label>
+					<label  class="layui-form-label">有学生考勤表</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t1" value="true" title="有" th:checked="${courseDesignTeacher.t1 == true}">
 						<input type="radio" name="t1" title="无" value="false" th:checked="${courseDesignTeacher.t1 == false}">
@@ -74,23 +90,16 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">有实习（实训）指导书</label>
+					<label  class="layui-form-label">考勤记录清晰完整</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t2" value="true" title="有" th:checked="${courseDesignTeacher.t2 == true}">
 						<input type="radio" name="t2" title="无" value="false" th:checked="${courseDesignTeacher.t2 == false}">
 
 					</div>
 				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">指导书与实习内容一致</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t3" value="true" title="有" th:checked="${courseDesignTeacher.t3 == true}">
-						<input type="radio" name="t3" title="无" value="false" th:checked="${courseDesignTeacher.t3 == false}">
 
-					</div>
-				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">有实施计划表</label>
+					<label  class="layui-form-label">有平时成绩记录	</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t4" value="true" title="有" th:checked="${courseDesignTeacher.t4 == true}">
 						<input type="radio" name="t4" title="无" value="false" th:checked="${courseDesignTeacher.t4 == false}">
@@ -98,23 +107,16 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">表中时间、地点、教师、实习内容等要素齐全</label>
+					<label  class="layui-form-label">平时成绩记录清晰完整</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t5" value="true" title="有" th:checked="${courseDesignTeacher.t5 == true}">
 						<input type="radio" name="t5" title="无" value="false" th:checked="${courseDesignTeacher.t5 == false}">
 
 					</div>
 				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">有学生分组表</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t6" value="true" title="有" th:checked="${courseDesignTeacher.t6 == true}">
-						<input type="radio" name="t6" title="无" value="false" th:checked="${courseDesignTeacher.t6 == false}">
 
-					</div>
-				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">收集了外聘教师资料</label>
+					<label  class="layui-form-label">有实验成绩记录</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t7" value="true" title="有" th:checked="${courseDesignTeacher.t7 == true}">
 						<input type="radio" name="t7" title="无" value="false" th:checked="${courseDesignTeacher.t7 == false}">
@@ -122,23 +124,16 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">在各类资料中体现外聘教师信息</label>
+					<label  class="layui-form-label">实验成绩记录清晰完整</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t8" value="true" title="有" th:checked="${courseDesignTeacher.t8 == true}">
 						<input type="radio" name="t8" title="无" value="false" th:checked="${courseDesignTeacher.t8 == false}">
 
 					</div>
 				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">有学生考勤表</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t9" value="true" title="有" th:checked="${courseDesignTeacher.t9 == true}">
-						<input type="radio" name="t9" title="无" value="false" th:checked="${courseDesignTeacher.t9 == false}">
 
-					</div>
-				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">考勤记录清晰完整</label>
+					<label  class="layui-form-label">有考场记录表</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t10" value="true" title="有" th:checked="${courseDesignTeacher.t10 == true}">
 						<input type="radio" name="t10" title="无" value="false" th:checked="${courseDesignTeacher.t10 == false}">
@@ -146,7 +141,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">报告份数与成绩单保持一致</label>
+					<label  class="layui-form-label">考场记录填写完全完整</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t11" value="true" title="有" th:checked="${courseDesignTeacher.t11 == true}">
 						<input type="radio" name="t11" title="无" value="false" th:checked="${courseDesignTeacher.t11 == false}">
@@ -154,7 +149,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">报告份数与成绩单保持一致</label>
+					<label  class="layui-form-label">有试卷分析表</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t12" value="true" title="有" th:checked="${courseDesignTeacher.t12 == true}">
 						<input type="radio" name="t12" title="无" value="false" th:checked="${courseDesignTeacher.t12 == false}">
@@ -162,7 +157,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">报告按成绩单顺序一致</label>
+					<label  class="layui-form-label">以课程卷面成绩进行分析</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t13" value="true" title="有" th:checked="${courseDesignTeacher.t13 == true}">
 						<input type="radio" name="t13" title="无" value="false" th:checked="${courseDesignTeacher.t13 == false}">
@@ -170,7 +165,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">报告有批改痕迹</label>
+					<label  class="layui-form-label">成绩分布图由教务系统生成</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t14" value="true" title="有" th:checked="${courseDesignTeacher.t14 == true}">
 						<input type="radio" name="t14" title="无" value="false" th:checked="${courseDesignTeacher.t14 == false}">
@@ -178,7 +173,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">有教学情况总结报告表</label>
+					<label  class="layui-form-label">成绩呈正态分布</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t15" value="true" title="有" th:checked="${courseDesignTeacher.t15 == true}">
 						<input type="radio" name="t15" title="无" value="false" th:checked="${courseDesignTeacher.t15 == false}">
@@ -187,7 +182,7 @@
 				</div>
 
 				<div class="layui-form-item">
-					<label  class="layui-form-label">平时、答辩、成果、操作考核等项成绩记录清晰完整</label>
+					<label  class="layui-form-label">总分为100分	</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t16" value="true" title="有" th:checked="${courseDesignTeacher.t16 == true}">
 						<input type="radio" name="t16" title="无" value="false" th:checked="${courseDesignTeacher.t16 == false}">
@@ -195,7 +190,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">平时、答辩、成果、操作考核等项成绩记录清晰完整</label>
+					<label  class="layui-form-label">小题分汇总成大题分无误	</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t17" value="true" title="有" th:checked="${courseDesignTeacher.t17 == true}">
 						<input type="radio" name="t17" title="无" value="false" th:checked="${courseDesignTeacher.t17 == false}">
@@ -203,7 +198,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">成绩组成与比例与大纲一致</label>
+					<label  class="layui-form-label">大题分抄写至总分栏无误</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t18" value="true" title="有" th:checked="${courseDesignTeacher.t18 == true}">
 						<input type="radio" name="t18" title="无" value="false" th:checked="${courseDesignTeacher.t18 == false}">
@@ -211,7 +206,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">各项信息、签字完整</label>
+					<label  class="layui-form-label">大题分累加总分无误	</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t19" value="true" title="有" th:checked="${courseDesignTeacher.t19 == true}">
 						<input type="radio" name="t19" title="无" value="false" th:checked="${courseDesignTeacher.t19 == false}">
@@ -227,7 +222,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">成绩优良率不高于60%</label>
+					<label  class="layui-form-label">使用红笔评阅</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t21" value="true" title="有" th:checked="${courseDesignTeacher.t21 == true}">
 						<input type="radio" name="t21" title="无" value="false" th:checked="${courseDesignTeacher.t21 == false}">
@@ -235,7 +230,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">成绩优秀率不高于20%</label>
+					<label  class="layui-form-label">客观题正确打√，错误打× </label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t22" value="true" title="有" th:checked="${courseDesignTeacher.t22 == true}">
 						<input type="radio" name="t22" title="无" value="false" th:checked="${courseDesignTeacher.t22 == false}">
@@ -243,7 +238,7 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">信息填写、签字等完整完全</label>
+					<label  class="layui-form-label">主观题失分处标注扣分</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t23" value="true" title="有" th:checked="${courseDesignTeacher.t23 == true}">
 						<input type="radio" name="t23" title="无" value="false" th:checked="${courseDesignTeacher.t23 == false}">
@@ -251,6 +246,62 @@
 					</div>
 				</div>
 
+				<div class="layui-form-item">
+					<label  class="layui-form-label">小题没有扣分、得分混用</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t24" value="true" title="有" th:checked="${courseDesignTeacher.t24 == true}">
+						<input type="radio" name="t24" title="无" value="false" th:checked="${courseDesignTeacher.t24 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">大题左上角标注得分（正分）</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t25" value="true" title="有" th:checked="${courseDesignTeacher.t25 == true}">
+						<input type="radio" name="t25" title="无" value="false" th:checked="${courseDesignTeacher.t25 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">更改分数时均有签字</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t26" value="true" title="有" th:checked="${courseDesignTeacher.t26 == true}">
+						<input type="radio" name="t26" title="无" value="false" th:checked="${courseDesignTeacher.t26 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">评阅人有签字	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t27" value="true" title="有" th:checked="${courseDesignTeacher.t27 == true}">
+						<input type="radio" name="t27" title="无" value="false" th:checked="${courseDesignTeacher.t27 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩组成与比例与考核方式一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t28" value="true" title="有" th:checked="${courseDesignTeacher.t28 == true}">
+						<input type="radio" name="t28" title="无" value="false" th:checked="${courseDesignTeacher.t28 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">试卷表各项信息、签字完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t29" value="true" title="有" th:checked="${courseDesignTeacher.t29 == true}">
+						<input type="radio" name="t29" title="无" value="false" th:checked="${courseDesignTeacher.t29 == false}">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">试卷袋封面信息填写、签字等完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t30" value="true" title="有" th:checked="${courseDesignTeacher.t30 == true}">
+						<input type="radio" name="t30" title="无" value="false" th:checked="${courseDesignTeacher.t30 == false}">
+
+					</div>
+				</div>
 
 
 
@@ -307,7 +358,7 @@
 					data.id=id;
 					$.ajax({
 						type:'post',
-					    url:"/practice/updPracticeTeacher",
+					    url:"/exam/updExamTeacher",
 					    data: JSON.stringify(data.field) ,
                         contentType : 'application/json',
 
@@ -319,7 +370,7 @@
 
 							    setTimeout(function (args) {
 							        var index = parent.layer.getFrameIndex(window.name);
-                                        parent.location.reload("/practice/practiceTeacherList");
+                                        parent.location.reload("/exam/examTeacherList");
                                     parent.layer.close(index);
 
                                     }

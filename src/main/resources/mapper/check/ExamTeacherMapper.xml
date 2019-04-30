@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjc.bs.mapper.check.ExamTeacherMapper">
+  <resultMap id="BaseResultMap" type="com.zjc.bs.entity.check.ExamTeacher">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="coursename" jdbcType="VARCHAR" property="coursename" />
+    <result column="classname" jdbcType="VARCHAR" property="classname" />
+    <result column="dep" jdbcType="VARCHAR" property="dep" />
+    <result column="pteachername" jdbcType="VARCHAR" property="pteachername" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="papernum" jdbcType="INTEGER" property="papernum" />
+    <result column="t1" jdbcType="BIT" property="t1" />
+    <result column="t2" jdbcType="BIT" property="t2" />
+    <result column="t3" jdbcType="BIT" property="t3" />
+    <result column="t4" jdbcType="BIT" property="t4" />
+    <result column="t5" jdbcType="BIT" property="t5" />
+    <result column="t6" jdbcType="BIT" property="t6" />
+    <result column="t7" jdbcType="BIT" property="t7" />
+    <result column="t8" jdbcType="BIT" property="t8" />
+    <result column="t9" jdbcType="BIT" property="t9" />
+    <result column="t10" jdbcType="BIT" property="t10" />
+    <result column="t11" jdbcType="BIT" property="t11" />
+    <result column="t12" jdbcType="BIT" property="t12" />
+    <result column="t13" jdbcType="BIT" property="t13" />
+    <result column="t14" jdbcType="BIT" property="t14" />
+    <result column="t15" jdbcType="BIT" property="t15" />
+    <result column="t16" jdbcType="BIT" property="t16" />
+    <result column="t17" jdbcType="BIT" property="t17" />
+    <result column="t18" jdbcType="BIT" property="t18" />
+    <result column="t19" jdbcType="BIT" property="t19" />
+    <result column="t20" jdbcType="BIT" property="t20" />
+    <result column="t21" jdbcType="BIT" property="t21" />
+    <result column="t22" jdbcType="BIT" property="t22" />
+    <result column="t23" jdbcType="BIT" property="t23" />
+    <result column="t24" jdbcType="BIT" property="t24" />
+    <result column="t25" jdbcType="BIT" property="t25" />
+    <result column="t26" jdbcType="BIT" property="t26" />
+    <result column="t27" jdbcType="BIT" property="t27" />
+    <result column="t28" jdbcType="BIT" property="t28" />
+    <result column="t29" jdbcType="BIT" property="t29" />
+    <result column="t30" jdbcType="BIT" property="t30" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="startyear" jdbcType="INTEGER" property="startyear" />
+    <result column="term" jdbcType="INTEGER" property="term" />
+  </resultMap>
+
+</mapper>

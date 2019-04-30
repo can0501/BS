@@ -47,6 +47,22 @@
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">
+						<span class="we-red">*</span>评卷老师
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="pteachername"   lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>试卷份数
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="papernum"   lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
 						<span class="we-red">*</span>专业年级
 					</label>
 					<div class="layui-input-inline">
@@ -62,20 +78,19 @@
 					</div>
 				</div>
 
-
 				<div class="layui-form-item">
 					<label  class="layui-form-label">有学生考勤表</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t1" value="true" title="有" checked>
-						<input type="radio" name="t1"  value="false" title="无"  >
+						<input type="radio" name="t1" value="true" title="有" checked  >
+						<input type="radio" name="t1" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">考勤记录清晰完整</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t2" value="true" title="有" checked>
-						<input type="radio" name="t2"  value="false" title="无"  >
+						<input type="radio" name="t2" value="true" title="有" checked  >
+						<input type="radio" name="t2" title="无" value="false"  >
 
 					</div>
 				</div>
@@ -83,16 +98,16 @@
 				<div class="layui-form-item">
 					<label  class="layui-form-label">有平时成绩记录	</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t4" value="true" title="有" checked>
-						<input type="radio" name="t4"  value="false" title="无"  >
+						<input type="radio" name="t4" value="true" title="有" checked  >
+						<input type="radio" name="t4" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">平时成绩记录清晰完整</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t5" value="true" title="有" checked>
-						<input type="radio" name="t5"  value="false" title="无"  >
+						<input type="radio" name="t5" value="true" title="有" checked  >
+						<input type="radio" name="t5" title="无" value="false"  >
 
 					</div>
 				</div>
@@ -100,187 +115,187 @@
 				<div class="layui-form-item">
 					<label  class="layui-form-label">有实验成绩记录</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t7" value="true" title="有" checked>
-						<input type="radio" name="t7"  value="false" title="无"  >
+						<input type="radio" name="t7" value="true" title="有" checked  >
+						<input type="radio" name="t7" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">实验成绩记录清晰完整</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t8" value="true" title="有" checked>
-						<input type="radio" name="t8"  value="false" title="无"  >
+						<input type="radio" name="t8" value="true" title="有" checked  >
+						<input type="radio" name="t8" title="无" value="false"  >
 
 					</div>
 				</div>
 
 				<div class="layui-form-item">
-					<label  class="layui-form-label">是否包含客观题</label>
+					<label  class="layui-form-label">有考场记录表</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t10" value="true" title="有"checked  >
-						<input type="radio" name="t10"  value="false" title="无"  >
+						<input type="radio" name="t10" value="true" title="有" checked  >
+						<input type="radio" name="t10" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">是否有题目及要求</label>
+					<label  class="layui-form-label">考场记录填写完全完整</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t11" value="true" title="有"  checked>
-						<input type="radio" name="t11"  value="false" title="无"  >
+						<input type="radio" name="t11" value="true" title="有" checked  >
+						<input type="radio" name="t11" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">是否有评分细则，且单项评分不超过25分</label>
+					<label  class="layui-form-label">有试卷分析表</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t12" value="true" title="有" checked>
-						<input type="radio" name="t12"  value="false" title="无"  >
+						<input type="radio" name="t12" value="true" title="有" checked  >
+						<input type="radio" name="t12" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">是否采用百分制，总分为100分</label>
+					<label  class="layui-form-label">以课程卷面成绩进行分析</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t13" value="true" title="有" checked>
-						<input type="radio" name="t13"  value="false" title="无"  >
+						<input type="radio" name="t13" value="true" title="有" checked  >
+						<input type="radio" name="t13" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">成果是否有统一的封面和格式要求</label>
+					<label  class="layui-form-label">成绩分布图由教务系统生成</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t14" value="true" title="有" checked>
-						<input type="radio" name="t14"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">报告份数与成绩单保持一致</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t15" value="true" title="有" checked>
-						<input type="radio" name="t15"  value="false" title="无"  >
-
-					</div>
-				</div>
-
-				<div class="layui-form-item">
-					<label  class="layui-form-label">报告顺序与成绩单顺序是否一致</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t16" value="true" title="有" checked>
-						<input type="radio" name="t16"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">有无成绩分析表	</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t17" value="true" title="有" checked>
-						<input type="radio" name="t17"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">以大作业成绩进行分析</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t18" value="true" title="有" checked>
-						<input type="radio" name="t18"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">成绩分布图由教务系统生成	</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t19" value="true" title="有" checked>
-						<input type="radio" name="t19"  value="false" title="无"  >
+						<input type="radio" name="t14" value="true" title="有" checked  >
+						<input type="radio" name="t14" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">成绩呈正态分布</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t20" value="true" title="有" checked>
-						<input type="radio" name="t20"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">是否使用红笔评阅，且有批改痕迹</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t21" value="true" title="有" checked>
-						<input type="radio" name="t21"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">评分是否按评分细则进行 </label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t22" value="true" title="有" checked>
-						<input type="radio" name="t22"  value="false" title="无"  >
-
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label  class="layui-form-label">更改分数时均有签字</label>
-					<div class="layui-input-block" >
-						<input type="radio" name="t23" value="true" title="有" checked>
-						<input type="radio" name="t23"  value="false" title="无"  >
+						<input type="radio" name="t15" value="true" title="有" checked  >
+						<input type="radio" name="t15" title="无" value="false"  >
 
 					</div>
 				</div>
 
 				<div class="layui-form-item">
-					<label  class="layui-form-label">分数累加总分无误</label>
+					<label  class="layui-form-label">总分为100分	</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t24" value="true" title="有" checked>
-						<input type="radio" name="t24"  value="false" title="无"  >
+						<input type="radio" name="t16" value="true" title="有" checked  >
+						<input type="radio" name="t16" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">总分统一标注在固定位置（建议封面）</label>
+					<label  class="layui-form-label">小题分汇总成大题分无误	</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t25" value="true" title="有" checked>
-						<input type="radio" name="t25"  value="false" title="无"  >
+						<input type="radio" name="t17" value="true" title="有" checked  >
+						<input type="radio" name="t17" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">大题分抄写至总分栏无误</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t18" value="true" title="有" checked  >
+						<input type="radio" name="t18" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">大题分累加总分无误	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t19" value="true" title="有" checked  >
+						<input type="radio" name="t19" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label  class="layui-form-label">分数录入教务系统无误</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t26" value="true" title="有" checked>
-						<input type="radio" name="t26"  value="false" title="无"  >
+						<input type="radio" name="t20" value="true" title="有" checked  >
+						<input type="radio" name="t20" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">成绩组成与比例与考核方式一致	</label>
+					<label  class="layui-form-label">使用红笔评阅</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t27" value="true" title="有" checked>
-						<input type="radio" name="t27"  value="false" title="无"  >
+						<input type="radio" name="t21" value="true" title="有" checked  >
+						<input type="radio" name="t21" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">各项信息、签字完整</label>
+					<label  class="layui-form-label">客观题正确打√，错误打× </label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t28" value="true" title="有" checked>
-						<input type="radio" name="t28"  value="false" title="无"  >
+						<input type="radio" name="t22" value="true" title="有" checked  >
+						<input type="radio" name="t22" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">课程相关资料是否按要求装订</label>
+					<label  class="layui-form-label">主观题失分处标注扣分</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t29" value="true" title="有" checked>
-						<input type="radio" name="t29"  value="false" title="无"  >
+						<input type="radio" name="t23" value="true" title="有" checked  >
+						<input type="radio" name="t23" title="无" value="false"  >
+
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">小题没有扣分、得分混用</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t24" value="true" title="有" checked  >
+						<input type="radio" name="t24" title="无" value="false"  >
 
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label  class="layui-form-label">信息填写、签字等完整</label>
+					<label  class="layui-form-label">大题左上角标注得分（正分）</label>
 					<div class="layui-input-block" >
-						<input type="radio" name="t30" value="true" title="有"  checked>
-						<input type="radio" name="t30"  value="false" title="无"  >
+						<input type="radio" name="t25" value="true" title="有" checked  >
+						<input type="radio" name="t25" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">更改分数时均有签字</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t26" value="true" title="有" checked  >
+						<input type="radio" name="t26" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">评阅人有签字	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t27" value="true" title="有" checked  >
+						<input type="radio" name="t27" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">成绩组成与比例与考核方式一致</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t28" value="true" title="有" checked  >
+						<input type="radio" name="t28" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">试卷表各项信息、签字完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t29" value="true" title="有" checked  >
+						<input type="radio" name="t29" title="无" value="false"  >
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">试卷袋封面信息填写、签字等完整</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t30" value="true" title="有" checked  >
+						<input type="radio" name="t30" title="无" value="false"  >
 
 					</div>
 				</div>
@@ -340,7 +355,7 @@
 
 					$.ajax({
 						type:'post',
-					    url:"/bigHouseWork/addBigHouseWordTeacher",
+					    url:"/exam/addExamTeacher",
 					    data:JSON.stringify(data.field),
 
                         contentType : 'application/json',
@@ -351,7 +366,7 @@
 
 							    setTimeout(function (args) {
 							        var index = parent.layer.getFrameIndex(window.name);
-                                        parent.location.reload("/bigHouseWork/BigHouseWordTeacherList");
+                                        parent.location.reload("/exam/examTeacherList");
                                     parent.layer.close(index);
 
                                     }

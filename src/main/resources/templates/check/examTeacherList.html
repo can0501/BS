@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>人员列表-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<link rel="stylesheet" href="/static/css/font.css" />
+		<link rel="stylesheet" href="/static/css/weadmin.css" />
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+		  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+		  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="weadmin-nav">
+			<span class="layui-breadcrumb">
+				<a href="javascript:;">首页</a> <a href="javascript:;">期末检查</a>
+				<a href="javascript:;"> <cite>试卷</cite></a>
+			</span>
+			<a class="layui-btn layui-btn-sm" style="margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+			 title="刷新">
+				<i class="layui-icon layui-icon-refresh"></i>
+				<!-- <i class="layui-icon" style="line-height:30px">&#x1002;</i> -->
+			</a>
+		</div>
+
+		<div class="weadmin-body">
+			<div class="layui-row">
+				<!--<form class="layui-form layui-col-md12 we-search">-->
+					<!--人员搜索：-->
+
+					<!--<div class="layui-inline">-->
+						<!--<input type="text" name="name" placeholder="请输入姓名" autocomplete="off" class="layui-input" />-->
+					<!--</div>-->
+					<!--<button class="layui-btn" lay-submit="" lay-filter="sreach">-->
+						<!--<i class="layui-icon layui-icon-search"></i>-->
+					<!--</button>-->
+				<!--</form>-->
+			</div>
+			<!--<input  name="pid" th:text="${id}" class="layui-hide">-->
+			<div class="weadmin-block">
+
+				<button class="layui-btn" onclick="WeAdminShow('提交','/exam/examTeacherAdd',600,400)">
+					<i class="layui-icon layui-icon-add-circle-fine"></i>添加
+				</button>
+
+			</div>
+			<table class="layui-table" lay-filter="memberList"   id="memberList">
+
+			</table>
+
+		</div>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+	<script>
+        /*
+ * @Author: https://github.com/WangEn
+ * @Author: https://gitee.com/lovetime/
+ * @Date:   2018-03-27
+ * @lastModify 2018-3-28
+ * +----------------------------------------------------------------------
+ * | WeAdmin 表格table中多个删除等操作公用js
+ * | 有改用时直接复制到对应页面也不影响使用
+ * +----------------------------------------------------------------------
+ */
+        layui.extend({
+            admin: '{/}/static/js/admin'
+        });
+        layui.use(['laydate', 'jquery', 'admin','table','form'], function() {
+            var laydate = layui.laydate,
+                $ = layui.jquery,
+				table=layui.table,
+				form=layui.form,
+                admin = layui.admin;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+            form.on('submit(sreach)', function(data){
+               // layer.msg(data.field.name)
+                table.reload('memberList', {
+                    url: ''
+                    ,where: {name:data.field.name} //设定异步数据接口的额外参数
+                    //,height: 300
+                });
+                return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+            });
+            window.delAll = function (argument) {
+                var list = table.checkStatus('memberList').data; //idTest 即为基础参数 id 对应的值
+                list = JSON.stringify(list);
+				// layer.msg(JSON.stringify(list))
+                layer.confirm('确认要删除吗？'  , function(index) {
+                    //捉到所有被选中的，发异步进行删除
+                    $.ajax({
+                        type:'post',
+					    url:"/exam/deleteExamTeacher",
+					    data:list,
+                        contentType : 'application/json',
+
+                        success:function (data) {
+							if(data.code==200)
+							{
+                                $(".layui-form-checked").not('.header').parents('tr').remove();
+							}
+                            layer.msg(data.msg, {
+                                icon: 1
+                            });
+					    }
+                    });
+
+
+
+                });
+            }
+            table.on('tool(memberList)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+                var data = obj.data; //获得当前行数据
+                var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+                var tr = obj.tr; //获得当前行 tr 的DOM对象
+
+                if(layEvent === 'detail'){ //查看
+                    //do somehing
+                } else if(layEvent === 'delete'){ //删除
+                    layer.confirm('真的删除行么', function(index){
+                        obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+
+                        layer.close(index);
+                        $.ajax({
+                            url:"/exam/deleteExamTeacher",
+                            data:{id:data.id},
+                            dataType:"json",
+                            success:function (data) {
+                                layer.msg(data.msg);
+                            }
+                        });
+                        //向服务端发送删除指令
+                    });
+                } else if(layEvent === 'edit'){ //编辑
+                    //do something
+
+
+                    WeAdminShow('修改','/exam/examTeacherUpd?id='+data.id,600,400);
+                    //同步更新缓存对应的值
+                    // obj.update({
+                    //     username: '123'
+                    //     ,title: 'xxx'
+                    // });
+                }
+            });
+
+
+            table.render({
+                elem: '#memberList'
+                ,
+                url:'/exam/examTeacherListData'
+                // data:{"code":0,"msg":"","count":1000,"data":[{"id":10000,"username":"user-0","sex":"女","city":"城市-0","sign":"签名-0","experience":255,"logins":24,"wealth":82830700,"classify":"作家","score":57},{"id":10001,"username":"user-1","sex":"男","city":"城市-1","sign":"签名-1","experience":884,"logins":58,"wealth":64928690,"classify":"词人","score":27}]}
+                ,
+                cols: [
+                    [
+                        {checkbox: true},
+                        {field: 'startyear', title: '学年' },
+                        {field: 'term', title: '学期'  },
+                        {field: 'classname', title: '班级'  },
+                        {field: 'coursename', title: '课程'   },
+                        {field: 'pteachername', title: '评卷老师'   },
+                        {field: 'papernum', title: '试卷份数'   },
+                        {field: 'dep', title: '学院'   },
+                        {field:'status', title: '状态', templet: function (d) {
+                            var s=["未审查","通过","未通过","已整改"];
+                                return s[d.status];
+
+                            }} //这里的templet值是模板元素的选择器
+                        ,{title:'操作', align:'center', toolbar: '#barDemo'} //这里的toolbar值是模板元
+
+
+                    ]
+                ]
+                , page:  true
+
+
+            });
+
+        });
+	</script>
+		<script type="text/html" id="barDemo">
+			<!--onclick="WeAdminEdit('编辑','./edit.html', 2, 600, 400)"-->
+			<a title="编辑"  lay-event="edit" href="javascript:;">
+				<i class="layui-icon layui-icon-edit"  ></i>
+			</a>
+
+			<a title="删除" lay-event="delete" href="javascript:;">
+				<i class="layui-icon layui-icon-delete"></i>
+			</a>
+		</script>
+ 	</body>
+</html>
