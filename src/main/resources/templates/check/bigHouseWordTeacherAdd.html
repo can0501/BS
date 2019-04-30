@@ -142,7 +142,7 @@
 					<label  class="layui-form-label">是否采用百分制，总分为100分</label>
 					<div class="layui-input-block" >
 						<input type="radio" name="t13" value="true" title="有" checked>
-						<input type="radio" name="t13"  value="false" title="无" checked>
+						<input type="radio" name="t13"  value="false" title="无"  >
 
 					</div>
 				</div>
@@ -340,7 +340,7 @@
 
 					$.ajax({
 						type:'post',
-					    url:"/bigHouseWork/addBigHouseWordTeacherapi",
+					    url:"/bigHouseWork/addBigHouseWordTeacher",
 					    data:JSON.stringify(data.field),
 
                         contentType : 'application/json',
