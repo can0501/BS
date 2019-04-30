@@ -2,6 +2,7 @@ package com.zjc.bs.entity.check;
 
 import java.util.Date;
 
+import com.zjc.bs.base.Page;
 import lombok.*;
 import tk.mybatis.mapper.annotation.KeySql;
 import tk.mybatis.mapper.code.IdentityDialect;
@@ -15,8 +16,8 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "plan", schema = "dbo")
-public class Plan {
+@Table(name = "coursePlan", schema = "dbo")
+public class Plan extends Page {
     @Id
     @Column( insertable = false, updatable = false)
     @GeneratedValue(generator = "JDBC")
