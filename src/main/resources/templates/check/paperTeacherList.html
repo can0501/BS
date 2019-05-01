@@ -18,8 +18,8 @@
 	<body>
 		<div class="weadmin-nav">
 			<span class="layui-breadcrumb">
-				<a href="javascript:;">首页</a> <a href="javascript:;">开学检查</a>
-				<a href="javascript:;"> <cite>授课计划</cite></a>
+				<a href="javascript:;">首页</a> <a href="javascript:;">期末检查</a>
+				<a href="javascript:;"> <cite>论文</cite></a>
 			</span>
 			<a class="layui-btn layui-btn-sm" style="margin-top:3px;float:right" href="javascript:location.replace(location.href);"
 			 title="刷新">
@@ -44,7 +44,7 @@
 			<!--<input  name="pid" th:text="${id}" class="layui-hide">-->
 			<div class="weadmin-block">
 
-				<button class="layui-btn" onclick="WeAdminShow('提交','/plan/planTeacherAdd',600,400)">
+				<button class="layui-btn" onclick="WeAdminShow('提交','/paper/paperTeacherAdd',600,400)">
 					<i class="layui-icon layui-icon-add-circle-fine"></i>添加
 				</button>
 
@@ -133,7 +133,7 @@
 
                         layer.close(index);
                         $.ajax({
-                            url:"/plan/deletePlanTeacher",
+                            url:"/paper/deletepaperTeacher",
                             data:{id:data.id},
                             dataType:"json",
                             success:function (data) {
@@ -146,7 +146,7 @@
                     //do something
 
 
-                    WeAdminShow('修改','/plan/planTeacherUpd?id='+data.id,600,400);
+                    WeAdminShow('修改','/paper/paperTeacherUpd?id='+data.id,600,400);
                     //同步更新缓存对应的值
                     // obj.update({
                     //     username: '123'
@@ -159,19 +159,24 @@
             table.render({
                 elem: '#memberList'
                 ,
-                url:'/plan/planTeacherListData'
+                url:'/paper/paperTeacherListData'
                 // data:{"code":0,"msg":"","count":1000,"data":[{"id":10000,"username":"user-0","sex":"女","city":"城市-0","sign":"签名-0","experience":255,"logins":24,"wealth":82830700,"classify":"作家","score":57},{"id":10001,"username":"user-1","sex":"男","city":"城市-1","sign":"签名-1","experience":884,"logins":58,"wealth":64928690,"classify":"词人","score":27}]}
                 ,
                 cols: [
                     [
                         {checkbox: true},
-                        {field: 'startyear', title: '学年' },
-                        {field: 'term', title: '学期'  },
-                        {field: 'classname', title: '班级'  },
-                        {field: 'coursename', title: '课程'   },
-                        {field: 'teachername', title: '任课老师'   },
-                        {field: 'grade', title: '学分'   },
-                        {field: 'studytime', title: '学时'   },
+                        {field: 'dep', title: '学院' },
+
+                        {field: 'classname', title: '专业班级'  },
+                        {field: 'coursename', title: '课题名称'   },
+                        {field: 'teachername', title: '指导老师'   },
+                        {field: 'checkname', title: '审查员'   },
+                        { title: '时间（起止周）', templet: function (d) {
+                            if(d.startweek!=null&&d.endweek!=null)
+                            return d.startweek+'-'+d.endweek;
+                                return '';
+
+                            }} ,//这里的templet值是模板元素的选择器
                         {field:'status', title: '状态', templet: function (d) {
                             var s=["未审查","通过","未通过","已整改"];
                                 return s[d.status];

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加会员-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 	 	<link rel="stylesheet" href="/static/css/font.css">
+		<link rel="stylesheet" href="/static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+	<!--<input  id="id" th:value="${id}" class="layui-hide">-->
+		<div class="weadmin-body">
+			<form class="layui-form">
+				<input type="text" disabled  th:value="${courseDesignTeacher.id}" name="id"   class="layui-hide">
+				<div class="layui-form-item">
+					<label   class="layui-form-label">
+						<span class="we-red">*</span>学院
+					</label>
+					<div class="layui-input-inline">
+						<input  disabled  type="text" th:value="${courseDesignTeacher.dep}"  name="dep" lay-verify="required|nikename" autocomplete="off" class="layui-input">
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>专业班级
+					</label>
+					<div class="layui-input-inline">
+						<input type="text" disabled  th:value="${courseDesignTeacher.classname}" name="classname" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>填表时间
+					</label>
+					<div class="layui-input-inline">
+						<input type="text" disabled th:value="${#dates.format( courseDesignTeacher.createtime,'yyyy-MM-dd')}"  name="createtime" lay-verify="date" placeholder="格式yyyy-MM-ddd" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课题名称
+					</label>
+					<div class="layui-input-inline">
+						<input type="text" disabled th:value="${courseDesignTeacher.coursename}" name="coursename" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课题来源
+
+					</label>
+					<div class="layui-input-inline" style="width: 400px">
+						<input type="radio" disabled value="0" th:checked="${courseDesignTeacher.courseregin==0}"  name="courseregin" lay-verify="required"   autocomplete="" checked title="工程实际"   class="layui-input">
+						<input type="radio" disabled value="1" th:checked="${courseDesignTeacher.courseregin==1}" name="courseregin" lay-verify="required" autocomplete=""   title="研究项目"   class="layui-input">
+						<input type="radio" disabled value="2" th:checked="${courseDesignTeacher.courseregin==2}" name="courseregin" lay-verify="required" autocomplete=""   title="社会实践"   class="layui-input">
+						<input type="radio" disabled value="3" th:checked="${courseDesignTeacher.courseregin==3}" name="courseregin" lay-verify="required" autocomplete=""   title="自拟"   class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课题类别
+
+					</label>
+					<div class="layui-input-inline" style="width: 400px">
+						<input type="radio" disabled value="0" th:checked="${courseDesignTeacher.courseregin==0}" name="coursetype" lay-verify="required"   autocomplete="" checked title="工程设计"   class="layui-input">
+						<input type="radio" disabled value="1" th:checked="${courseDesignTeacher.courseregin==1}" name="coursetype" lay-verify="required" autocomplete=""   title="专题研究"   class="layui-input">
+						<input type="radio" disabled value="2" th:checked="${courseDesignTeacher.courseregin==2}" name="coursetype" lay-verify="required" autocomplete=""   title="论文综述"   class="layui-input">
+						<input type="radio" disabled value="3" th:checked="${courseDesignTeacher.courseregin==3}" name="coursetype" lay-verify="required" autocomplete=""   title="产品开发"   class="layui-input">
+						<input type="radio" disabled value="4"th:checked="${courseDesignTeacher.courseregin==4}" name="coursetype" lay-verify="required" autocomplete=""   title="其它"   class="layui-input">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课题完成形式
+
+					</label>
+					<div class="layui-input-inline" style="width: 400px">
+						<input type="radio" value="0" disabled th:checked="${courseDesignTeacher.courseregin==0}" name="solvetype" lay-verify="required"   autocomplete="" checked title="毕业论文"   class="layui-input">
+						<input type="radio" value="1" disabled th:checked="${courseDesignTeacher.courseregin==1}" name="solvetype" lay-verify="required" autocomplete=""   title="毕业设计"   class="layui-input">
+						<input type="radio" value="2" disabled th:checked="${courseDesignTeacher.courseregin==2}" name="solvetype" lay-verify="required" autocomplete=""   title="综述报告"   class="layui-input">
+						<input type="radio" value="3" disabled th:checked="${courseDesignTeacher.courseregin==3}" name="solvetype" lay-verify="required" autocomplete=""   title="提交作品并撰写论文"   class="layui-input">
+						<input type="radio" value="4" disabled th:checked="${courseDesignTeacher.courseregin==4}" name="solvetype" lay-verify="required" autocomplete=""   title="其它"   class="layui-input">
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>起始周
+
+					</label>
+
+					<div class="layui-input-inline"  >
+						<input type="text" disabled th:value="${courseDesignTeacher.startweek}"  name="startweek" lay-verify="required"   autocomplete=""    class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>结束周
+
+					</label>
+
+					<div class="layui-input-inline"  >
+						<input type="text"disabled  th:value="${courseDesignTeacher.endweek}" name="endweek" lay-verify="required"   autocomplete=""     class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>地点
+
+					</label>
+					<div class="layui-input-inline" style="width: 400px">
+						<input type="radio" value="0"disabled th:checked="${courseDesignTeacher.placetype==0}" name="placetype" lay-verify="required" autocomplete=""   title="校内"   class="layui-input">
+						<input type="radio" value="1"disabled th:checked="${courseDesignTeacher.placetype==1}" name="placetype" lay-verify="required" autocomplete=""   title="校外"   class="layui-input">
+						<!--<input type="radio" value="0" name="placetype" th:check="${courseDesignTeacher.placetype==0}" lay-verify="required"   autocomplete="" checked title="校内"   class="layui-input">-->
+						<!--<input type="radio" value="1" name="placetype" th:check="${courseDesignTeacher.placetype==1}" lay-verify="required" autocomplete=""   title="校外"   class="layui-input">-->
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>指导老师姓名
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"disabled th:value="${courseDesignTeacher.teachername}" name="teachername" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学历
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"disabled  th:value="${courseDesignTeacher.education}" name="education" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>内容简介及选题理由
+
+					</label>
+					<div class="layui-input-inline">
+						<textarea disabled name="content" th:text="${courseDesignTeacher.content}" placeholder="科学性、可行性论证" class="layui-textarea"></textarea>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>条件要求
+
+
+					</label>
+					<div class="layui-input-inline">
+						<textarea disabled name="condition"th:text="${courseDesignTeacher.condition}" placeholder=" " class="layui-textarea"></textarea>
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						审查建议
+
+
+					</label>
+					<div class="layui-input-inline">
+						<textarea name="suggestion"th:text="${courseDesignTeacher.suggession}" placeholder=" "    class="layui-textarea"></textarea>
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						审查
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="radio" value="1"  th:checked="${courseDesignTeacher.status==1}" name="status" lay-verify="required" autocomplete=""   title="通过"   class="layui-input">
+						<input type="radio" value="2"  th:checked="${courseDesignTeacher.status==2}" name="status" lay-verify="required" autocomplete=""   title="不通过"   class="layui-input">
+					</div>
+				</div>
+
+
+
+				<div class="layui-form-item">
+					<label   class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+			</form>
+		</div>
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}/static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+                // layer.msg(parent.location.href);
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 1) {
+							return '昵称至少得1个字符啊';
+						}
+					},
+					pass: [/(.+){1,12}$/, '密码必须1到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+				   var id= $('#id').val()
+                    console.log(JSON.stringify(data.field));
+					data.id=id;
+					$.ajax({
+						type:'post',
+					    url:"/paper/updatepaperSup",
+					    data: {status:data.field.status,id:data.field.id,suggession:data.field.suggestion} ,
+
+
+
+					    success:function (data) {
+                            layer.msg(data.msg);
+                            if(data.code==200)
+							{
+
+							    setTimeout(function (args) {
+							        var index = parent.layer.getFrameIndex(window.name);
+                                        parent.location.reload("/paper/paperTeacherList");
+                                    parent.layer.close(index);
+
+                                    }
+
+                                    ,1000)
+
+
+							}
+
+					    }
+					});
+
+					return false;
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

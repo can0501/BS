@@ -2,6 +2,7 @@ package com.zjc.bs.entity.check;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.zjc.bs.base.Page;
 import lombok.*;
 import tk.mybatis.mapper.annotation.KeySql;
@@ -44,8 +45,7 @@ public class Plan extends Page {
     private String bookauther;
 
     private String bookpublish;
-
-    private Date booktime;
+     private Date booktime;
 
     private String preference;
 

@@ -58,7 +58,7 @@ public class PlanApi {
         return Response.failure(Msg.DEL_FALIED);
     }
     @RequestMapping("/updatePlanSup")
-    public Response updatePlanSup( @RequestBody Plan  PlanSup, HttpServletRequest request) {
+    public Response updatePlanSup(   Plan  PlanSup, HttpServletRequest request) {
         if(planService.updatePlanSup(PlanSup))
             return Response.success(null, Msg.UPD_SUCCESS);
         return Response.failure(Msg.UPD_FALIED);

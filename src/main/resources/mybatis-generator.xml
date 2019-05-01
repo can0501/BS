@@ -48,14 +48,14 @@
             selectByExampleQueryId="false"
             mapperName="Mapper接口名称"
          ></table>-->
-        <table tableName="plan"
-               domainObjectName="Plan"
+        <table tableName="paper"
+               domainObjectName="Paper"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false"
-               mapperName="PlanMapper"
+               mapperName="PaperMapper"
         ></table>
     </context>
 </generatorConfiguration>

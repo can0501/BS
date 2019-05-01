@@ -58,6 +58,214 @@
 					</div>
 				</div>
 
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>任 课
+						教 师
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="teachername" th:value="${courseDesignTeacher.teachername}"   lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学分
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="grade"th:value="${courseDesignTeacher.grade}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>本期上课周数
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="classnum"th:value="${courseDesignTeacher.classnum}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>本 期
+						总学时
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="studytime"th:value="${courseDesignTeacher.studytime}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>教 材
+
+						名 称
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="bookname"th:value="${courseDesignTeacher.bookname}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>编著者
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="bookauther" th:value="${courseDesignTeacher.classname}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>出版社
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="bookpublish"th:value="${courseDesignTeacher.bookpublish}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>出版时间
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="booktime" placeholder="格式yyy-MM-dd"lay-verify="date"th:value="${#dates.format(courseDesignTeacher.booktime,'yyyy-MM-dd')}" autocomplete=""   class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>参 考
+
+						教 材
+
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="preference" lay-verify="required"th:value="${courseDesignTeacher.preference}" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>讲课学时
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="speaktime" lay-verify="required"th:value="${courseDesignTeacher.speaktime}" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>实验学时
+
+						名 称
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="experiencetime" lay-verify="required"th:value="${courseDesignTeacher.experiencetime}" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>其他学时
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="other" lay-verify="required" autocomplete=""th:value="${courseDesignTeacher.other}" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>考核方式
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="radio"  title="考试" value="0" th:checked="${courseDesignTeacher.examtype==0}"  name="examtype"  >
+						<input type="radio"  title="考察" value="1" th:checked="${courseDesignTeacher.examtype==1}"  name="examtype"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						期末考核占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="exam"  th:value="${courseDesignTeacher.exam}" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						平时作业占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="housework" th:value="${courseDesignTeacher.housework}"  autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						课堂讨论和提问占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="classperformance" th:value="${courseDesignTeacher.classperformance}"  autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						阶段测验占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="smallexam"  th:value="${courseDesignTeacher.smallexam}" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						实    验占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="experience" th:value="${courseDesignTeacher.experience}"  autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						小 论 文占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="smallpaper" th:value="${courseDesignTeacher.smallpaper}"  autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						期中考试占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="middleexam" th:value="${courseDesignTeacher.middleexam}"  autocomplete="" class="layui-input">
+					</div>
+				</div>
 
 
 
@@ -65,7 +273,7 @@
 				<div class="layui-form-item">
 					<label   class="layui-form-label">
               </label>
-					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+					<button class="layui-btn" lay-filter="add"  lay-submit="">确定</button>
 				</div>
 			</form>
 		</div>

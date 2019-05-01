@@ -162,9 +162,11 @@
                         {field: 'term', title: '学期'  },
                         {field: 'classname', title: '班级'  },
                         {field: 'coursename', title: '课程'   },
-                        {field: 'dep', title: '学院'   },
+                        {field: 'teachername', title: '任课老师'   },
+                        {field: 'grade', title: '学分'   },
+                        {field: 'studytime', title: '学时'   },
                         {field:'status', title: '状态', templet: function (d) {
-                            var s=["未审查","通过","未通过","已整改"];
+                                var s=["未审查","通过","未通过","已整改"];
                                 return s[d.status];
 
                             }} //这里的templet值是模板元素的选择器

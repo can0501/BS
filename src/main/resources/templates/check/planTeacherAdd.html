@@ -48,10 +48,218 @@
 
 				<div class="layui-form-item">
 					<label  class="layui-form-label">
-						<span class="we-red">*</span>专业年级
+						<span class="we-red">*</span>适用专业/年级
 					</label>
 					<div class="layui-input-inline">
 						<input type="text"  name="classname" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>任 课
+						教 师
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="teachername" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学分
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="grade" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>本期上课周数
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="classnum" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+				<label  class="layui-form-label">
+					<span class="we-red">*</span>本 期
+					总学时
+
+				</label>
+				<div class="layui-input-inline">
+					<input type="text"  name="studytime" lay-verify="required" autocomplete="" class="layui-input">
+				</div>
+			</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>教 材
+
+						名 称
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="bookname" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>编著者
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="bookauther" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>出版社
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="bookpublish" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>出版时间
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="booktime" placeholder="格式yyy-MM-dd"lay-verify="date" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>参 考
+
+						教 材
+
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="preference" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>讲课学时
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="speaktime" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>实验学时
+
+						名 称
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="experiencetime" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>其他学时
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="other" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>考核方式
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="radio"  title="考试" value="0"   name="examtype"  >
+						<input type="radio"  title="考察" value="1"   name="examtype"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 期末考核占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="exam"   autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 平时作业占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="housework"   autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 课堂讨论和提问占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="classperformance"   autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 阶段测验占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="smallexam"   autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 实    验占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="experience"   autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 小 论 文占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="smallpaper"   autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						 期中考试占比(%)
+
+
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="middleexam"   autocomplete="" class="layui-input">
 					</div>
 				</div>
 
@@ -63,7 +271,7 @@
 
 
 				<div class="layui-form-item">
-					<label for="L_repass" class="layui-form-label">
+					<label   class="layui-form-label">
               </label>
 					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
 				</div>
