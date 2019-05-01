@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjc.bs.mapper.check.PaperMapper">
+  <resultMap id="BaseResultMap" type="com.zjc.bs.entity.check.Paper">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="dep" jdbcType="VARCHAR" property="dep" />
+    <result column="classname" jdbcType="VARCHAR" property="classname" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="coursename" jdbcType="VARCHAR" property="coursename" />
+    <result column="courseregin" jdbcType="INTEGER" property="courseregin" />
+    <result column="coursetype" jdbcType="INTEGER" property="coursetype" />
+    <result column="solvetype" jdbcType="INTEGER" property="solvetype" />
+    <result column="startweek" jdbcType="INTEGER" property="startweek" />
+    <result column="endweek" jdbcType="INTEGER" property="endweek" />
+    <result column="placetype" jdbcType="INTEGER" property="placetype" />
+    <result column="teachername" jdbcType="VARCHAR" property="teachername" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="condition" jdbcType="VARCHAR" property="condition" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="suggession" jdbcType="VARCHAR" property="suggession" />
+    <result column="checkname" jdbcType="VARCHAR" property="checkname" />
+  </resultMap>
+
+</mapper>
