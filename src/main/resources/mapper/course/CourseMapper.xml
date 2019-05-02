@@ -7,6 +7,12 @@
     <result column="tid" jdbcType="INTEGER" property="tid" />
     <result column="time" jdbcType="VARCHAR" property="time" />
     <result column="tname"   property="tname" />
+    <result column="classnumber"   property="classnumber" />
+    <result column="coursetype"   property="coursetype" />
+    <result column="educationtype"   property="educationtype" />
+    <result column="studentnum"   property="studentnum" />
+    <result column="grade"   property="grade" />
+
   </resultMap>
   <select id="getCouesePageByCondition" resultMap="BaseResultMap">
     select t1.*,t2.name tname from course  t1

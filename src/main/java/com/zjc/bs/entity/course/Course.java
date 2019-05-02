@@ -31,5 +31,12 @@ public class Course extends Page {
     @Transient
     private String tname;
 
+    private String classnumber;
+    private String coursetype;
+    private String educationtype;
+    private String studentnum;
+    private Integer grade;
+
+
 
 }
