@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加会员-WeAdmin Frame型后台管理系统-WeAdmin 1.0</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+ 	 	<link rel="stylesheet" href="/static/css/font.css">
+		<link rel="stylesheet" href="/static/css/weadmin.css">
+		<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+	<!--<input  id="id" th:value="${id}" class="layui-hide">-->
+		<div class="weadmin-body">
+			<form class="layui-form">
+				<input type="text"  th:value="${courseDesignTeacher.id}" name="id"   class="layui-hide">
+
+				<div class="layui-form-item">
+					<label   class="layui-form-label">
+						<span class="we-red">*</span>姓名
+					</label>
+					<div class="layui-input-inline">
+						<input    type="text" name="name" disabled th:value="${courseDesignTeacher.teachername}"  lay-verify="required|nikename" autocomplete="off" class="layui-input">
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>学院
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="dep" disabled th:value="${courseDesignTeacher.dep}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>专业年级
+					</label>
+					<div class="layui-input-inline">
+						<input type="text"  name="classname" disabled th:value="${courseDesignTeacher.classname}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">
+						<span class="we-red">*</span>课程
+					</label>
+					<div class="layui-input-inline">
+						<input type="text" disabled  name="coursename" th:value="${courseDesignTeacher.coursename}" lay-verify="required" autocomplete="" class="layui-input">
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">爱岗敬业</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t1" value="0" title="优" th:checked="${courseDesignTeacher.t1==0}">
+						<input type="radio" name="t1"  value="1"  title="良" th:checked="${courseDesignTeacher.t1==1}"  >
+						<input type="radio" name="t1" value="2" title="差"  th:checked="${courseDesignTeacher.t1==2}"  >
+
+
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">为人师表</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t2" value="0" title="优" th:checked="${courseDesignTeacher.t2==0}">
+						<input type="radio" name="t2"  value="1"  title="良" th:checked="${courseDesignTeacher.t2==1}"  >
+						<input type="radio" name="t2"  value="2" title="差"  th:checked="${courseDesignTeacher.t2==2}"   >
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">学历资格	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t3" value="0" title="优" th:checked="${courseDesignTeacher.t3==0}">
+						<input type="radio" name="t3"  value="1"  title="良" th:checked="${courseDesignTeacher.t3 ==1}"  >
+						<input type="radio" name="t3"  value="2" title="差"  th:checked="${courseDesignTeacher.t3==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学技能</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t4" value="0" title="优" th:checked="${courseDesignTeacher.t4==0}">
+						<input type="radio" name="t4"  value="1"  title="良" th:checked="${courseDesignTeacher.t4==1}"  >
+						<input type="radio" name="t4"  value="2" title="差"  th:checked="${courseDesignTeacher.t4==2}"  >
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">作业指导</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t5" value="0" title="优" th:checked="${courseDesignTeacher.t5==0}">
+						<input type="radio" name="t5"  value="1"  title="良" th:checked="${courseDesignTeacher.t5==1}"  >
+						<input type="radio" name="t5"  value="2" title="差"  th:checked="${courseDesignTeacher.t5==2}"  >
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学质量</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t6" value="0" title="优" th:checked="${courseDesignTeacher.t6==0}"  >
+						<input type="radio" name="t6"  value="1"  title="良" th:checked="${courseDesignTeacher.t6==1}"  >
+						<input type="radio" name="t6"  value="2" title="差"  th:checked="${courseDesignTeacher.t6==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">终身学习</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t7" value="0" title="优"  th:checked="${courseDesignTeacher.t7==0}">
+						<input type="radio" name="t7"  value="1"  title="良" th:checked="${courseDesignTeacher.t7==1}"  >
+						<input type="radio" name="t7"  value="2" title="差"  th:checked="${courseDesignTeacher.t7==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">转变观念</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t8" value="0" title="优" th:checked="${courseDesignTeacher.t8==0}">
+						<input type="radio" name="t8"  value="1"  title="良" th:checked="${courseDesignTeacher.t8==1}"  >
+						<input type="radio" name="t8"  value="2" title="差"  th:checked="${courseDesignTeacher.t8==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">反思交流</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t9" value="0" title="优" th:checked="${courseDesignTeacher.t9==0}">
+						<input type="radio" name="t9"  value="1"  title="良" th:checked="${courseDesignTeacher.t9==1}"  >
+						<input type="radio" name="t9"  value="2" title="差"  th:checked="${courseDesignTeacher.t9==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学能力</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t10" value="0" title="优" th:checked="${courseDesignTeacher.t10==0}">
+						<input type="radio" name="t10"  value="1"  title="良" th:checked="${courseDesignTeacher.t10==1}"  >
+						<input type="radio" name="t10"  value="2" title="差"  th:checked="${courseDesignTeacher.t10==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">研究行动</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t11" value="0" title="优" th:checked="${courseDesignTeacher.t11==0}">
+						<input type="radio" name="t11"  value="1"  title="良" th:checked="${courseDesignTeacher.t11==1}"  >
+						<input type="radio" name="t11"  value="2" title="差"  th:checked="${courseDesignTeacher.t11==2}"  >
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">研究能力</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t12" value="0" title="优" th:checked="${courseDesignTeacher.t12==0}">
+						<input type="radio" name="t12"  value="1"  title="良" th:checked="${courseDesignTeacher.t12==1}"  >
+						<input type="radio" name="t12"  value="2" title="差"  th:checked="${courseDesignTeacher.t12==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">创新成果	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t13" value="0" title="优" th:checked="${courseDesignTeacher.t13==0}">
+						<input type="radio" name="t13"  value="1"  title="良" th:checked="${courseDesignTeacher.t13==1}"  >
+						<input type="radio" name="t13"  value="2" title="差"  th:checked="${courseDesignTeacher.t13==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学设计</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t14" value="0" title="优" th:checked="${courseDesignTeacher.t14==0}">
+						<input type="radio" name="t14"  value="1"  title="良" th:checked="${courseDesignTeacher.t14==1}"  >
+						<input type="radio" name="t14"  value="2" title="差"  th:checked="${courseDesignTeacher.t14==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学技术	</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t15" value="0" title="优" th:checked="${courseDesignTeacher.t15==0}">
+						<input type="radio" name="t15"  value="1"  title="良" th:checked="${courseDesignTeacher.t15==1}"  >
+						<input type="radio" name="t15"  value="2" title="差"  th:checked="${courseDesignTeacher.t15==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学方式</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t16" value="0" title="优" th:checked="${courseDesignTeacher.t16==0}">
+						<input type="radio" name="t16"  value="1"  title="良" th:checked="${courseDesignTeacher.t16==1}"  >
+						<input type="radio" name="t16"  value="2" title="差"  th:checked="${courseDesignTeacher.t16==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">学习环境 </label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t17" value="0" title="优" th:checked="${courseDesignTeacher.t17==0}">
+						<input type="radio" name="t17"  value="1"  title="良" th:checked="${courseDesignTeacher.t17==1}"  >
+						<input type="radio" name="t17"  value="2" title="差"  th:checked="${courseDesignTeacher.t17==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">课堂调控 </label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t18" value="0" title="优" th:checked="${courseDesignTeacher.t18==0}">
+						<input type="radio" name="t18"  value="1"  title="良" th:checked="${courseDesignTeacher.t18==1}"  >
+						<input type="radio" name="t18"  value="2" title="差"  th:checked="${courseDesignTeacher.t18==2}"  >
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label  class="layui-form-label">过程评价</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t19" value="0" title="优" th:checked="${courseDesignTeacher.t19==0}">
+						<input type="radio" name="t19"  value="1"  title="良" th:checked="${courseDesignTeacher.t19==1}"  >
+						<input type="radio" name="t19"  value="2" title="差"  th:checked="${courseDesignTeacher.t19==2}"  >
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label  class="layui-form-label">教学效果</label>
+					<div class="layui-input-block" >
+						<input type="radio" name="t20" value="0" title="优" th:checked="${courseDesignTeacher.t20==0}">
+						<input type="radio" name="t20"  value="1"  title="良" th:checked="${courseDesignTeacher.t20==1}"   >
+						<input type="radio" name="t20"  value="2" title="差"  th:checked="${courseDesignTeacher.t20==2}"  >
+					</div>
+				</div>
+
+
+
+
+
+
+				<div class="layui-form-item">
+					<label   class="layui-form-label">
+              </label>
+					<button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
+				</div>
+			</form>
+		</div>
+		<script src="/lib/layui/layui.js" charset="utf-8"></script>
+		
+		<script>
+			layui.extend({
+				admin: '{/}/static/js/admin'
+			});
+			layui.use(['form', 'jquery','util','admin', 'layer'], function() {
+				var form = layui.form,
+					$ = layui.jquery,
+					util = layui.util,
+					admin = layui.admin,
+					layer = layui.layer;
+                // layer.msg(parent.location.href);
+
+				//自定义验证规则
+				form.verify({
+					nikename: function(value) {
+						if(value.length < 1) {
+							return '昵称至少得1个字符啊';
+						}
+					},
+					pass: [/(.+){1,12}$/, '密码必须1到12位'],
+					repass: function(value) {
+						if($('#L_pass').val() != $('#L_repass').val()) {
+							return '两次密码不一致';
+						}
+					}
+				});
+				//失去焦点时判断值为空不验证，一旦填写必须验证
+				$('input[name="email"]').blur(function(){
+					//这里是失去焦点时的事件
+					if($('input[name="email"]').val()){
+						$('input[name="email"]').attr('lay-verify','email');
+					}else{
+						$('input[name="email"]').removeAttr('lay-verify');
+					}
+				});
+
+				//监听提交
+				form.on('submit(add)', function(data) {
+				   var id= $('#id').val()
+                    console.log(JSON.stringify(data.field));
+					data.id=id;
+					$.ajax({
+						type:'post',
+					    url:"/estimate/updateEstimateSup",
+					    data: JSON.stringify(data.field) ,
+                        contentType : 'application/json',
+
+
+					    success:function (data) {
+                            layer.msg(data.msg);
+                            if(data.code==200)
+							{
+
+							    setTimeout(function (args) {
+							        var index = parent.layer.getFrameIndex(window.name);
+                                        parent.location.reload("/estimate/estimateSupList");
+                                    parent.layer.close(index);
+
+                                    }
+
+                                    ,1000)
+
+
+							}
+
+					    }
+					});
+
+					return false;
+				});
+
+			});
+		</script>
+	</body>
+
+</html>
