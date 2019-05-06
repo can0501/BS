@@ -152,6 +152,16 @@
                     //     username: '123'
                     //     ,title: 'xxx'
                     // });
+                } else if (layEvent === 'upload') {
+                    WeAdminShow('上传','/upload/photoAdd?id='+data.id+"&&type=1",600,400);
+                }
+                else if (layEvent === 'look') {
+                    $.getJSON('/accessory/getPhotos?fid='+data.id+"&&type=1", function(json){
+                        layer.photos({
+                            photos: json
+                            ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+                        });
+                    });
                 }
             });
 
@@ -198,6 +208,13 @@
 			<a title="删除" lay-event="delete" href="javascript:;">
 				<i class="layui-icon layui-icon-delete"></i>
 			</a>
+            <a title="上传" lay-event="upload" href="javascript:;">
+                <i class="layui-icon layui-icon-camera"></i>
+            </a>
+            <a title="查看图片" lay-event="look" href="javascript:;">
+                <i class="layui-icon layui-icon-picture
+"></i>
+            </a>
 		</script>
  	</body>
 </html>

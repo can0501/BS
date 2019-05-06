@@ -7,4 +7,8 @@ public  class  Msg {
     public  static String DEL_FALIED = "删除失败";
     public static String UPD_SUCCESS = "更新成功";
     public  static String UPD_FALIED = "更新失败";
+
+    public  static String UPLOAD_FALIED = "上传失败";
+    public  static String UPLOAD_SUCCESS = "上传成功";
+
 }

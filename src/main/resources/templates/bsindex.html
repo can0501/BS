@@ -26,42 +26,34 @@
 				<i title="展开左侧栏" class="layui-icon layui-icon-shrink-right"></i>
 
 			</div>
-			<ul class="layui-nav left fast-add" lay-filter="">
-				<li class="layui-nav-item">
-					<a href="javascript:;">+新增</a>
-					<dl class="layui-nav-child">
-						<!-- 二级菜单 -->
-						<dd>
-							<a onclick="WeAdminShow('资讯','https://www.baidu.com/')"><i class="layui-icon layui-icon-list"></i>资讯</a>
-						</dd>
-						<dd>
-							<a onclick="WeAdminShow('图片','http://www.baidu.com')"><i class="layui-icon layui-icon-picture-fine"></i>图片</a>
-						</dd>
-						<dd>
-							<a onclick="WeAdminShow('用户','https://www.baidu.com/')"><i class="layui-icon layui-icon-user"></i>用户</a>
-						</dd>
-					</dl>
-				</li>
-			</ul>
+			<!--<ul class="layui-nav left fast-add" lay-filter="">-->
+				<!--<li class="layui-nav-item">-->
+					<!--<a href="javascript:;">+新增</a>-->
+					<!--<dl class="layui-nav-child">-->
+						<!--&lt;!&ndash; 二级菜单 &ndash;&gt;-->
+						<!--<dd>-->
+							<!--<a onclick="WeAdminShow('资讯','https://www.baidu.com/')"><i class="layui-icon layui-icon-list"></i>资讯</a>-->
+						<!--</dd>-->
+						<!--<dd>-->
+							<!--<a onclick="WeAdminShow('图片','http://www.baidu.com')"><i class="layui-icon layui-icon-picture-fine"></i>图片</a>-->
+						<!--</dd>-->
+						<!--<dd>-->
+							<!--<a onclick="WeAdminShow('用户','https://www.baidu.com/')"><i class="layui-icon layui-icon-user"></i>用户</a>-->
+						<!--</dd>-->
+					<!--</dl>-->
+				<!--</li>-->
+			<!--</ul>-->
 			<ul class="layui-nav right" lay-filter="">
 				<li class="layui-nav-item">
 					<a href="javascript:;" th:text="${people.name}"></a>
 					<dl class="layui-nav-child">
-						<!-- 二级菜单 -->
-						<dd>
-							<a onclick="WeAdminShow('个人信息','http://www.baidu.com')">个人信息</a>
-						</dd>
-						<dd>
-							<a onclick="WeAdminShow('切换帐号','/login.html')">切换帐号</a>
-						</dd>
+
 						<dd>
 							<a class="loginout" href="/login.html">退出</a>
 						</dd>
 					</dl>
 				</li>
-				<li class="layui-nav-item to-index">
-					<a href="/">前台首页</a>
-				</li>
+
 			</ul>
 
 		</div>
@@ -267,7 +259,7 @@
 							</li>
 						</ul>
 					</li>
-					<li th:if="${people.role!=0||people.role!=3}">
+					<li th:if="${people.role!=0&&people.role!=3}">
 						<a href="javascript:;">
 							<i class="iconfont">&#xe726;</i>
 							<cite>教学评估</cite>
@@ -310,7 +302,7 @@
 				</ul>
 				<div class="layui-tab-content">
 					<div class="layui-tab-item layui-show">
-						<iframe src='/pages/welcome.html' frameborder="0" scrolling="yes" class="weIframe"></iframe>
+						<!--<iframe src='/pages/welcome.html' frameborder="0" scrolling="yes" class="weIframe"></iframe>-->
 					</div>
 				</div>
 			</div>
