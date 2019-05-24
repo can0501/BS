@@ -21,8 +21,8 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 //        list.add("/login.html");
 //        list.add(("/bsuser/login"));
 //        list.add(("/static/**"));
-
-//        registry.addInterceptor( loginInterceptor).addPathPatterns("/bsuser/*").excludePathPatterns("/bsuser/login") ;
+        String [] strings={"/bsuser/*","/accessory/*","/bigHouseWork/*","/courseDesign/*","/exam/*","/paper/*","/plan/*","/practice/*","/course/*","/estimate/*","/people/*"};
+        registry.addInterceptor( loginInterceptor).addPathPatterns(strings).excludePathPatterns("/bsuser/login") ;
         super.addInterceptors(registry);
     }
     @Override
