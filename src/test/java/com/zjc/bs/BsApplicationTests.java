@@ -23,9 +23,7 @@ public class BsApplicationTests {
 
     @Test
     public void contextLoads() {
-//        PageHelper.startPage(1, 10);
-        List list = mapper.selectAll();
-        int i=1;
+ 
     }
 
 }
