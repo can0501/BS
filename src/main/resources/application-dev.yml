@@ -10,6 +10,24 @@ mybatis:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 spring:
   datasource:
     url: jdbc:sqlserver://localhost:1433;databasename=bs
