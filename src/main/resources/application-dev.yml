@@ -13,7 +13,7 @@ mybatis:
 #asdsadsadsadsadsad
 
 #t1
-T11
+#T11
 
 
 
@@ -27,7 +27,7 @@ T11
 
 
 
-
+#asdsad
 spring:
   datasource:
     url: jdbc:sqlserver://localhost:1433;databasename=bs
